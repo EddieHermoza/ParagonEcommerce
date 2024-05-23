@@ -1,33 +1,97 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+  @layer base {
+    body {
+      @apply bg-black relative text-white w-screen overflow-x-hidden
+    }
   }
-}
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  @layer components {
+    .flex-center{
+      @apply flex items-center justify-center
+    }
   }
-}
+
+  .parallax-animation{
+    animation: parallax linear both;
+    animation-timeline: scroll(root);
+    animation-range : 0 200px
+  }
+
+  @keyframes parallax {
+    from{
+      transform: translateY(0px);
+    }
+    to{
+      transform: translateY(120px);
+    }
+  }
+
+  .glitch a:nth-child(1) {
+    color: white;
+    animation: glitch 2s infinite forwards
+  }
+  .glitch a:nth-child(2) {
+    color: white;
+    animation: glitchTwo 1.5s infinite forwards
+  }
+  .glitch a:nth-child(3) {
+    color: white;
+    animation: glitchThree 1s infinite forwards
+  }
+  
+  @keyframes glitch {
+    0% {
+      transform: translate(0, 0);
+      clip-path: polygon(19% 74%, 75% 84%, 75% 100%, 0% 100%);
+    }
+    5% {
+      transform: translate(10px, 0);
+      clip-path: polygon(100% 0%, 100% 0%, 5% 50%, 0% 10%);
+    }
+    10% {
+      transform: translate(0, 0);
+      clip-path: polygon(3% 100%, 100% 53%, 12% 12%, 0% 3%);
+    }
+    15% {
+      transform: translate(10px, 10px);
+      clip-path: polygon(39% 43%, 50% 19%, 15% 22%, 20% 40%);
+    }
+    20% {
+      transform: translate(-10px, -10px);
+      clip-path: polygon(100% 54%, 22% 25%, 33% 54%, 34% 97%);
+    }
+    25% {
+      transform: translate(0, 0);
+      clip-path: polygon(19% 74%, 75% 84%, 75% 100%, 0% 100%);
+    }
+  }
+  
+  @keyframes glitchTwo {
+    0% {
+      transform: translate(20px, 0);
+      clip-path: polygon(22% 0%, 0% 84%, 0% 50%, 0% 0%);
+    }
+    3% {
+      transform: translate(0, 10px);
+      clip-path: polygon(0% 10%, 50% 32%, 54% 2%, 10% 100%);
+    }
+    8% {
+      transform: translate(0, 0);
+      clip-path: polygon(3% 0%, 54% 53%, 0% 12%, 0% 30%);
+    }
+    12% {
+      transform: translate(-10px, 10px);
+      clip-path: polygon(0% 23%, 50% 0%, 15% 22%, 0% 40%);
+    }
+    18% {
+      transform: translate(-10px, 10px);
+      clip-path: polygon(0% 0%, 19% 25%, 22% 54%, 0% 97%);
+    }
+    30% {
+      transform: translate(0, 0);
+      clip-path: polygon(22% 0%, 0% 84%, 0% 50%, 0% 0%);
+    }
+  }
