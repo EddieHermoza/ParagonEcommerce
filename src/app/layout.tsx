@@ -5,7 +5,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Paragon Ecoomerce",
-  description: "Paragon Ecoomerce",
+  description: "Paragon Ecoomerce mein ioru",
 };
 
 export default function RootLayout({
