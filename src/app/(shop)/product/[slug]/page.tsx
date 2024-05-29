@@ -93,6 +93,7 @@ export default function Page({ params }: { params: { slug: string } }) {
       </section>
     </main>
     <Footer/>
+    
     </>
   );
 }
