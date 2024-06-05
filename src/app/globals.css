@@ -12,6 +12,13 @@
     .flex-center{
       @apply flex items-center justify-center
     }
+    .btn-primary{
+      @apply duration-300 shadow-lg bg-aorus hover:bg-cyan-400 hover:shadow-cyan-400/50 hover:text-black
+
+    }
+    .btn-secondary{
+      @apply text-white duration-300 border shadow-lg hover:bg-white hover:text-black hover:shadow-white/50
+    }
   }
 
   .parallax-animation{

@@ -32,7 +32,7 @@ export default function Page({ params }: { params: { slug: string } }) {
         <Title title={product?.name} />
         <div className="w-full grid grid-cols-1 lg:grid-cols-2 lg:divide-x relative">
 
-          <picture className="flex-center flex-col gap-10 h-auto relative w-full px-5">
+          <picture  className="flex-center flex-col gap-10 h-auto relative w-full px-5">
 
             <div className="h-full w-full">
 
@@ -73,9 +73,11 @@ export default function Page({ params }: { params: { slug: string } }) {
               >
               {product?.descripcion}
               </p>
-              <span>Cantidad Seleccionada:</span>
+              <Link href="https://www.youtube.com/watch?v=BQRxS30ujDY&list=RDMMHP5wapaQO4Q&index=7" target="_blank" className="hover:text-aorus underline underline-offset-4 hover:underline-offset-8 duration-300 ">Más Información</Link>
+              <p>Cantidad Seleccionada:</p>
               <QuantitySelector/>
               <AddToCartButton Iconsize={28} className="bg-black w-full lg:w-1/2 py-3 border hover:bg-white hover:text-black shadow-lg hover:shadow-white/50 duration-300 flex-center gap-1"/>
+
             </div>
 
           </div>

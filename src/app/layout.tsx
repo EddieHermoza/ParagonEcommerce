@@ -14,9 +14,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es">
-      <body className={aldrich.className}>
-        <div vaul-drawer-wrapper="" className="bg-background">
+    <html lang="es" className="scrollbar-thin scrollbar-track-black scrollbar-thumb-aorus">
+      <body className={ `${aldrich.className} `}>
+        <div vaul-drawer-wrapper="" className="bg-background ">
             {children}
           </div>
         </body>

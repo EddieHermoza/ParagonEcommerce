@@ -41,7 +41,7 @@ export default function MenuBar() {
 
           </ul>
       </nav>
-      <div className="w-full h-full flex justify-end items-center gap-5 pr-10 relative">
+      <div className="w-full h-full flex justify-end items-center gap-5 pr-5 relative">
         <div className="max-lg:hidden h-8">
           <TopSearchBar/>
         </div>
