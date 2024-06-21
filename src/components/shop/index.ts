@@ -8,11 +8,7 @@ export {default as ExploreSection }  from "@/components/shop/sections/exploreSec
 export {default as MenuBar} from "@/components/shop/menubar/MenuBar"
 export {default as TopSearchBar} from "@/components/shop/search/TopSearchBar"
 export {default as SearchBar} from "@/components/shop/search/SearchBar"
-export {default as ToogleBrand} from "@/components/shop/filters/ToogleBrand"
-export {default as ToogleCategory} from "@/components/shop/filters/ToogleCategory"
-export {default as ToogleOrder} from "@/components/shop/filters/ToogleOrder"
-export {default as SearchByName} from "@/components/shop/filters/SearchByName"
-export {default as PriceSelector} from "@/components/shop/filters/PriceSelector"
+
 export {default as AddToCartButton} from "@/components/shop/cart/AddToCartButton"
 export {default as ProductGrid} from "@/components/shop/products/ProductGrid"
 export {default as FilterProductsPage} from "@/components/shop/products/FilterProductsPage"

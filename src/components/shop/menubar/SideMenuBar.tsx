@@ -51,7 +51,7 @@ export default function SideMenuBar({brands,categories}:Props) {
 
           <Accordion type="single" collapsible>
             <AccordionItem value="item-1">
-              <AccordionTrigger className="text-xl [&[data-state=open]>svg]:rotate-180">
+              <AccordionTrigger className="max-sm:text-lg text-xl [&[data-state=open]>svg]:rotate-180">
                 Marcas
                 <IoChevronUp className="transition-transform duration-200 h-7 w-7 shrink-0" />
               </AccordionTrigger>
@@ -65,7 +65,7 @@ export default function SideMenuBar({brands,categories}:Props) {
             </AccordionItem>
 
             <AccordionItem value="item-2">
-              <AccordionTrigger className="text-xl [&[data-state=open]>svg]:rotate-180">
+              <AccordionTrigger className="max-sm:text-lg [&[data-state=open]>svg]:rotate-180">
                 Categorias
                 <IoChevronUp className="transition-transform duration-200 h-7 w-7 shrink-0" />
               </AccordionTrigger>
@@ -80,6 +80,10 @@ export default function SideMenuBar({brands,categories}:Props) {
           </Accordion>
         <div className="w-full pt-10">
           <SearchBar/>
+        </div>
+        <div className=" pt-10 w-full flex flex-col gap-3 text- max-sm:text-sm">
+          <LinkTransition  onClick={ToogleOpen} href="/auth/login" className="w-full flex-center btn-secondary py-3">Iniciar Sesión</LinkTransition>
+          <LinkTransition  onClick={ToogleOpen} href="/auth/new-account" className="w-full flex-center btn-secondary py-3">Registrarse</LinkTransition>
         </div>
         </SheetContent>
       </Sheet>

@@ -1,8 +1,8 @@
 import { MdFilterList } from "react-icons/md";
-import {SearchByName} from "@/components/shop";
-import {ToogleOrder} from "@/components/shop";
-import {ToogleCategory} from "@/components/shop";
-import {PriceSelector} from "@/components/shop";
+import {SearchByName} from "@/components/filters";
+import {ToogleOrder} from "@/components/filters";
+import {ToogleCategory} from "@/components/filters";
+import {PriceSelector} from "@/components/filters";
 import { Suspense } from "react";
 
 export default function FilterBrandPage() {

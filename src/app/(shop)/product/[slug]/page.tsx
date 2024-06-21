@@ -30,11 +30,11 @@ export default function Page({ params }: { params: { slug: string } }) {
     <main>
       <section className="min-h-[calc(100vh-130px)] w-full relative flex flex-col items-center">
         <Title title={product?.name} />
-        <div className="w-full grid grid-cols-1 lg:grid-cols-2 lg:divide-x relative">
+        <div className="relative grid w-full grid-cols-1 lg:grid-cols-2 lg:divide-x">
 
-          <picture  className="flex-center flex-col gap-10 h-auto relative w-full px-5">
+          <picture  className="relative flex-col w-full h-auto gap-10 px-5 flex-center">
 
-            <div className="h-full w-full">
+            <div className="w-full h-full">
 
               <div className="flex justify-center">
                 <Rating rating={product?.rating} />
@@ -50,7 +50,7 @@ export default function Page({ params }: { params: { slug: string } }) {
 
                   <span className="text-xl text-left">Especificaciones Técnicas</span>
 
-                  <IoChevronUp className="h-7 w-7 shrink-0 transition-transform duration-200" />
+                  <IoChevronUp className="transition-transform duration-200 h-7 w-7 shrink-0" />
                 </AccordionTrigger>
                 <AccordionContent  className={` ${titilium.className} w-full space-y-8 relative py-3 text-gray-300 text-lg`}>
                   {product?.especificaciones.map((especificacion,index)=>(
@@ -63,9 +63,9 @@ export default function Page({ params }: { params: { slug: string } }) {
             
           </picture>
 
-          <div className="h-full w-full">
+          <div className="w-full h-full">
             <div className="lg:sticky top-[60px] text-xl space-y-7 px-5 py-3 ">
-              <p className="text-2xl">Marca: <Link href={`/brands/${product?.marca}`} className="hover:text-aorus duration-300">{product?.marca} </Link></p>
+              <p className="text-2xl">Marca: <Link href={`/brands/${product?.marca}`} className="duration-300 hover:text-aorus">{product?.marca} </Link></p>
               <p >En stock: {product?.stock}</p>
               <h3> Precio: $/ {product?.precio}</h3>
               <p
@@ -73,10 +73,10 @@ export default function Page({ params }: { params: { slug: string } }) {
               >
               {product?.descripcion}
               </p>
-              <Link href="https://www.youtube.com/watch?v=BQRxS30ujDY&list=RDMMHP5wapaQO4Q&index=7" target="_blank" className="hover:text-aorus underline underline-offset-4 hover:underline-offset-8 duration-300 ">Más Información</Link>
+              <Link href="https://www.aorus.com/es-pe" target="_blank" className="underline duration-300 hover:text-aorus underline-offset-4 hover:underline-offset-8 ">Más Información</Link>
               <p>Cantidad Seleccionada:</p>
               <QuantitySelector/>
-              <AddToCartButton Iconsize={28} className="bg-black w-full lg:w-1/2 py-3 border hover:bg-white hover:text-black shadow-lg hover:shadow-white/50 duration-300 flex-center gap-1"/>
+              <AddToCartButton Iconsize={28} className="w-full gap-1 py-3 btn-secondary lg:w-1/2 flex-center"/>
 
             </div>
 

@@ -11,7 +11,7 @@ export default function ProductGrid() {
                     key={index}
                     tittle={product.name}
                     price={product.precio}
-                    img={product.imgs[0]}
+                    img={"/images/Laptop.webp"}
                     url={`/product/${product.slug}`}
                 />
             ))}

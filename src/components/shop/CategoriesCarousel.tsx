@@ -26,7 +26,7 @@ import {CustomImage} from "@/components/ui";
             {categories.map((category, index) => (
               <CarouselItem key={index} className="pl-1 sm:basis-1/2 lg:basis-1/3 xl:basis-1/4">
                 <Link href={`/categories/${category.slug}`} className="h-full w-full bg-black flex justify-center flex-col items-center group hover:scale-[1.15] duration-300">
-                  <CustomImage height={260} width={260} alt={category.name} src={category.img} className="h-[260px] w-[260px] hover:saturate-[3] duration-300" />
+                  <CustomImage height={260} width={260} alt={category.name} src={"/images/Laptop.webp"} className="h-[260px] w-[260px] hover:saturate-[3] duration-300" />
                   <span className="text-2xl duration-300 group-hover:text-aorus">{category.name}</span>
                 </Link>
               </CarouselItem>

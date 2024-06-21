@@ -25,7 +25,7 @@ export default function CustomImage(props:Props) {
       className={props.className}
       height={props.height}
       width={props.width}
-      src={"/images/Laptop.webp"}
+      src={props.src}
       alt={props.alt}
     >
     </Image>

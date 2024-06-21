@@ -31,7 +31,7 @@ export default function Pagination({ totalPages }: { totalPages: number }) {
         isDisabled={currentPage <= 1}
       />
 
-      <div className="flex -space-x-px">
+      <div className="flex -space-x-px gap-2">
         {allPages.map((page, index) => {
           let position: "first" | "last" | "single" | "middle" | undefined;
 
@@ -73,7 +73,7 @@ function PaginationNumber({
   isActive: boolean;
 }) {
   const className = clsx(
-    "flex h-10 w-10 items-center justify-center text-sm border",
+    "flex h-10 w-10 items-center justify-center text-sm border border-neutral-800 rounded-md",
     {
       "": position === "first" || position === "single",
       "": position === "last" || position === "single",
@@ -102,7 +102,7 @@ function PaginationArrow({
   isDisabled?: boolean;
 }) {
   const className = clsx(
-    "flex h-10 w-10 items-center justify-center border",
+    "flex h-10 w-10 items-center justify-center border border-neutral-800 rounded-md",
     {
       "pointer-events-none text-gray-700 border-gray-700": isDisabled,
       "hover:bg-neutral-800": !isDisabled,

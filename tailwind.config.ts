@@ -19,14 +19,20 @@ const config = {
         "2xl": "1400px",
       },
     },
+    borderRadius: {
+      'none': '0',
+      'sm': '0.125rem',
+      DEFAULT: '0.25rem',
+      'md': '0.375rem',
+      'lg': '0.5rem',
+      'full': '9999px',
+      'large': '12px',
+    },
     extend: {
-      borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
-      },
+
       colors: {
         'aorus': 'rgb(255, 100, 0)',
+        'pressed':'hsl(240 3.7% 15.9%)',
       },
       textShadow: {
         sm: '0 1px 2px var(--tw-shadow-color)',

@@ -1,9 +1,9 @@
 import { MdFilterList } from "react-icons/md";
-import {SearchByName} from "@/components/shop"
-import {ToogleOrder} from "@/components/shop"
-import {PriceSelector} from "@/components/shop"
-import {ToogleCategory} from "@/components/shop"
-import {ToogleBrand} from "@/components/shop"
+import {SearchByName} from "@/components/filters"
+import {ToogleOrder} from "@/components/filters"
+import {PriceSelector} from "@/components/filters"
+import {ToogleCategory} from "@/components/filters"
+import {ToogleBrand} from "@/components/filters"
 import { Suspense } from "react";
 
 export default function FilterProductsPage() {
@@ -13,7 +13,7 @@ export default function FilterProductsPage() {
 
       <div className="flex flex-col gap-10 max-lg:gap-14 transform duration-300">
 
-        <div className="flex items-center justify-between max-lg:flex-col gap-10 max-lg:gap-14 transform duration-300">
+        <div className="flex items-center justify-between max-lg:flex-col gap-10 max-lg:gap-14  duration-300">
           <Suspense>
             <SearchByName/>
           </Suspense>
@@ -22,7 +22,7 @@ export default function FilterProductsPage() {
           </Suspense>
         </div>
 
-        <div className="grid gap-10 grid-cols-3 max-lg:grid-cols-1 max-lg:gap-14 transform duration-300">
+        <div className="grid gap-10 grid-cols-3 max-lg:grid-cols-1 max-lg:gap-14  duration-300">
           <Suspense> 
             <ToogleBrand/> 
           </Suspense>

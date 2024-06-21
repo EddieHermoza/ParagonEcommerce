@@ -32,8 +32,8 @@ export default function ToogleOrder() {
             <SelectValue placeholder="Seleccionar"/>
       </SelectTrigger>
       <SelectContent className="bg-black" position="popper" sideOffset={10} hideWhenDetached>
-        <SelectItem className="hover:bg-aorus duration-300 cursor-pointer" value="ascendete">Precio ascendente</SelectItem>
-        <SelectItem className="hover:bg-aorus duration-300 cursor-pointer" value="descendente">Precio descendente</SelectItem>
+        <SelectItem className="hover:bg-aorus duration-300 cursor-pointer" value="asc">Precio ascendente</SelectItem>
+        <SelectItem className="hover:bg-aorus duration-300 cursor-pointer" value="desc">Precio descendente</SelectItem>
         <SelectItem className="hover:bg-aorus duration-300 cursor-pointer" value="AZ">A a la Z</SelectItem>
         <SelectItem className="hover:bg-aorus duration-300 cursor-pointer" value="ZA">Z a la A</SelectItem>
       </SelectContent>
