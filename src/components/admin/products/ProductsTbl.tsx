@@ -7,72 +7,117 @@ import { FiEdit } from "react-icons/fi";
 import { MdOutlineUnfoldMore } from "react-icons/md";
 import {Pagination} from "@/components/ui";
 import { Suspense } from "react";
+import {Product} from "@/types/types"
+import { useState } from "react";
+import { HiOutlineArrowsUpDown } from "react-icons/hi2";
+
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover"
+
+type SortConfig = {
+  key: keyof Product;
+  order: 'asc' | 'desc';
+}
+
 export default function ProductsTbl() {
+
+  const [sortConfig, setSortConfig] = useState<SortConfig>({ key: 'id', order: 'desc' });
+  const [sortedProducts, setSortedProducts] = useState <Product[]>(products);
+
+  const handleSort = (key: keyof Product) => {
+
+    const order = sortConfig.key === key && sortConfig.order === 'asc' ? 'desc' : 'asc';
+
+    setSortConfig({ key, order });
+
+    const sortedData = [...products].sort((a, b) => {
+
+      if (a[key] < b[key]) {
+        return order === 'asc' ? -1 : 1;
+      }
+
+      if (a[key] > b[key]) {
+        return order === 'asc' ? 1 : -1;
+      }
+
+      return 0;
+
+    });
+
+    setSortedProducts(sortedData);
+  };
   return (
-    <section className="w-full flex flex-col gap-5">
-    <table className="table-auto text-center w-full">
-      <thead className=" border-b-aorus border-b  relative text-xl ">
+
+  <section className="w-full flex flex-col gap-5">
+    <table className="table-auto text-center w-full ">
+      <thead className=" border-b-aorus border-b  relative text-sm lg:text-base ">
         <tr className="h-16">
-          <td >
-            Codigo
+          <td>
+            <button onClick={() => handleSort('id')} className='flex-center gap-2 mx-auto active:bg-pressed hover:bg-neutral-900 p-2 rounded'>
+                <HiOutlineArrowsUpDown/>
+                Id
+            </button>
           </td>
           <td>
             Imagen
           </td>
-          <td className="text-left">
-            Nombre
+          <td >
+            <button onClick={() => handleSort('name')} className='flex-center gap-2 active:bg-pressed hover:bg-neutral-900 p-2 rounded'>
+                <HiOutlineArrowsUpDown/>
+                Nombre
+            </button>
           </td>
-          <td>
+          <td className="max-sm:hidden">
             Estado
           </td>
-          <td>
-            Precio
+          <td className="max-sm:hidden">
+            <button onClick={() => handleSort('price')} className='flex-center gap-2 mx-auto active:bg-pressed hover:bg-neutral-900 p-2 rounded'>
+                <HiOutlineArrowsUpDown/>
+                Precio
+            </button>
           </td>
-          <td>
+          <td className="max-lg:hidden">
             Descuento
           </td>
-          <td>
+          <td className="max-lg:hidden">
             Creado
           </td>
-          <td>
+          <td className="max-lg:hidden">
             Modificado
           </td>
-          <td className="">
-            Acciones
+          <td >
           </td>
         </tr>
       </thead>
       <tbody className="text-sm relative">
-        {products.map((product, index) => (
-          <tr key={index} className="hover:bg-neutral-900 duration-300 relative">
-            <td className=" rounded-l-lg">
-              {index}
+        {sortedProducts.map((product, index) => (
+          <tr key={index} className="hover:bg-neutral-900 duration-300 relative h-24">
+            <td className=" rounded-l-lg ">
+              {product.id}
             </td>
             <td>
               <CustomImage src="/images/Laptop.webp" alt="" height={96} width={96} className="mx-auto" />
             </td>
-            <td className="text-left">
+            <td className="text-left max-sm:text-xs">
               {product.name}
             </td>
-            <td>
-              Habilitado
+            <td className="max-sm:hidden">
+              Activo
             </td>
-            <td>
-              $/ {product.precio}
+            <td className="max-sm:hidden">
+              $/ {product.price}
             </td>
-            <td>
-              $/ {product.precio}
+            <td className="max-lg:hidden">
+              $/ {product.price}
             </td>
-            <td>
-              Creado
+            <td className="max-lg:hidden">
+              27-06-2024
             </td>
-            <td>
-              Modificado
+            <td className="max-lg:hidden">
+              27-06-2024
             </td>
             <td className="rounded-r-lg space-x-2 ">
               <Popover>

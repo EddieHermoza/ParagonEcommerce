@@ -1,4 +1,4 @@
-import { NavAdmin } from "@/components/admin";
+import { NavAdmin, NavMobileDashboard } from "@/components/admin";
 import { Glitch } from "@/components/ui";
 
 export default function Layout({
@@ -14,7 +14,8 @@ export default function Layout({
       </header>
       <div className="flex h-[calc(100vh-60px)] relative w-screen">
         <NavAdmin/>
-        <main className={` w-full h-full relative bg-neutral-950 p-10 flex flex-col gap-10 overflow-x-hidden overflow-y-auto scrollbar-thin scrollbar-track-neutral-950 scrollbar-thumb-aorus`}>
+        <NavMobileDashboard/>
+        <main className={` w-full h-full relative bg-neutral-950 p-4 sm:p-10 flex flex-col gap-10 overflow-x-hidden overflow-y-auto scrollbar-thin scrollbar-track-neutral-950 scrollbar-thumb-aorus`}>
           {children}
         </main>
       </div>

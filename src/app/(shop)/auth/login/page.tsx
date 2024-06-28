@@ -1,5 +1,5 @@
 import Link from "next/link";
-import LinkTransition from "@/components/ui/LinkTransition";
+import {LinkTransition} from "@/components/ui";
 
 export default function Page() {
   return (
@@ -14,7 +14,7 @@ export default function Page() {
           <span className="">Contraseña</span>
           <input type="password" name="" id="" className="outline-none h-[40px] bg-black border focus:border-aorus transform duration-300 p-2 w-full"/>
         </label>
-        <button className=" w-full btn-primary text-lg sm:text-2xl py-2">Iniciar Sesión</button>
+        <Link href={"/admin/dashboard"} className=" w-full btn-primary text-lg sm:text-2xl py-2 flex-center">Iniciar Sesión</Link>
       </form>
       <div className="flex flex-col gap-3 relative px-5">
         <span className="text-lg mx-auto">o</span>

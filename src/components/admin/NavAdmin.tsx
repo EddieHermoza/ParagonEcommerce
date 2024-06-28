@@ -11,6 +11,7 @@ import { IoShieldHalfSharp } from "react-icons/io5";
 import { MdCategory } from "react-icons/md";
 import { SiLogitechg } from "react-icons/si";
 import { FaComputer } from "react-icons/fa6";
+import { TiShoppingBag } from "react-icons/ti";
 import {
   Tooltip,
   TooltipContent,
@@ -37,12 +38,13 @@ export default function NavAdmin() {
     { label: "Categorias", href: "/admin/categories", icon: MdCategory }, 
     { label: "Comentarios", href: "/admin/reviews", icon: FaRegCommentDots }, 
     { label: "Administradores", href: "/admin/workers", icon: IoShieldHalfSharp }, 
-    { label: "Pagos", href: "/admin/payments", icon: MdOutlinePayment }, 
+    { label: "Ventas", href: "/admin/sales", icon: MdOutlinePayment }, 
+    { label: "Compras", href: "/admin/expenses", icon: TiShoppingBag }, 
   ];
 
   return (
-    <nav className="h-full flex  py-4 px-2">
-      <ul className="w-full text-white flex flex-col gap-3 items-center text-sm">
+    <nav className="h-full flex  py-4 px-2 max-xl:hidden">
+      <ul className="w-full text-white flex flex-col gap-3 items-center text-sm overflow-y-auto">
         <TooltipProvider delayDuration={0}>
           {dashboardLinks.map((link, index) => {
             const Icon = link.icon;

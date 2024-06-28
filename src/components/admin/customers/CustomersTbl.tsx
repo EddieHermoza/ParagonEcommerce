@@ -16,7 +16,7 @@ export default function CustomersTbl() {
   return (
     <section className="w-full flex flex-col gap-5">
     <table className="table-auto text-center w-full">
-      <thead className=" border-b-aorus border-b  relative text-xl ">
+      <thead className=" border-b-aorus border-b  relative text-sm lg:text-base">
         <tr className="h-16">
           <td >
             Codigo
@@ -24,19 +24,19 @@ export default function CustomersTbl() {
           <td className="text-left">
             Nombres
           </td>
-          <td className="text-left">
+          <td className="text-left max-lg:hidden">
             Apellidos
           </td>
-          <td>
+          <td className="max-lg:hidden">
             Estado
           </td>
           <td>
             Correo
           </td>
-          <td>
+          <td className="max-xl:hidden">
             Creado
           </td>
-          <td>
+          <td className="max-xl:hidden">
             Modificado
           </td>
           <td className="">
@@ -44,7 +44,7 @@ export default function CustomersTbl() {
           </td>
         </tr>
       </thead>
-      <tbody className="text-sm relative">
+      <tbody className="text-xs sm:text-sm relative">
         {products.map((product, index) => (
           <tr key={index} className="hover:bg-neutral-900 duration-300 relative h-24">
             <td className=" rounded-l-lg">
@@ -53,20 +53,20 @@ export default function CustomersTbl() {
             <td className="text-left">
               {product.name}
             </td>
-            <td className="text-left">
+            <td className="text-left max-lg:hidden">
               {product.name}
             </td>
-            <td>
-              Habilitado
+            <td className="max-lg:hidden">
+              Activo
             </td>
             <td>
               {product.slug}
             </td>
-            <td>
-              Creado
+            <td className="max-xl:hidden">
+              27-06-2024
             </td>
-            <td>
-              Modificado
+            <td className="max-xl:hidden">
+              27-06-2024
             </td>
             <td className="rounded-r-lg space-x-2 ">
               <Popover>

@@ -33,8 +33,8 @@ export default function ToogleStatus() {
       </SelectTrigger>
       <SelectContent className="bg-black" position="popper" sideOffset={10} hideWhenDetached>
         <SelectItem className="hover:bg-aorus duration-300 cursor-pointer" value="dis">Todos</SelectItem>
-        <SelectItem className="hover:bg-aorus duration-300 cursor-pointer" value="en">Habilitado</SelectItem>
-        <SelectItem className="hover:bg-aorus duration-300 cursor-pointer" value="dis">Deshabilitado</SelectItem>
+        <SelectItem className="hover:bg-aorus duration-300 cursor-pointer" value="en">Activo</SelectItem>
+        <SelectItem className="hover:bg-aorus duration-300 cursor-pointer" value="dis">Inactivo</SelectItem>
       </SelectContent>
     </Select>
   );

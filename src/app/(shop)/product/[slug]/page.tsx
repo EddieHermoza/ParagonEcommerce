@@ -53,7 +53,7 @@ export default function Page({ params }: { params: { slug: string } }) {
                   <IoChevronUp className="transition-transform duration-200 h-7 w-7 shrink-0" />
                 </AccordionTrigger>
                 <AccordionContent  className={` ${titilium.className} w-full space-y-8 relative py-3 text-gray-300 text-lg`}>
-                  {product?.especificaciones.map((especificacion,index)=>(
+                  {product?.especs.map((especificacion,index)=>(
                     <li key={index}>{especificacion}</li>
                   ))}
 
@@ -65,13 +65,13 @@ export default function Page({ params }: { params: { slug: string } }) {
 
           <div className="w-full h-full">
             <div className="lg:sticky top-[60px] text-xl space-y-7 px-5 py-3 ">
-              <p className="text-2xl">Marca: <Link href={`/brands/${product?.marca}`} className="duration-300 hover:text-aorus">{product?.marca} </Link></p>
+              <p className="text-2xl">Marca: <Link href={`/brands/${product?.brand}`} className="duration-300 hover:text-aorus">{product?.brand} </Link></p>
               <p >En stock: {product?.stock}</p>
-              <h3> Precio: $/ {product?.precio}</h3>
+              <h3> Precio: $/ {product?.price}</h3>
               <p
                 className={`${titilium.className} text-gray-300 max-sm:text-base font-thin relative pb-5`}
               >
-              {product?.descripcion}
+              {product?.description}
               </p>
               <Link href="https://www.aorus.com/es-pe" target="_blank" className="underline duration-300 hover:text-aorus underline-offset-4 hover:underline-offset-8 ">Más Información</Link>
               <p>Cantidad Seleccionada:</p>

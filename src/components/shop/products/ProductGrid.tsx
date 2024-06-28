@@ -10,7 +10,7 @@ export default function ProductGrid() {
                 <ProductCard
                     key={index}
                     tittle={product.name}
-                    price={product.precio}
+                    price={product.price}
                     img={"/images/Laptop.webp"}
                     url={`/product/${product.slug}`}
                 />
