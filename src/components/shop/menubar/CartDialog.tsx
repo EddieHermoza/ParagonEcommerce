@@ -32,7 +32,7 @@ const Content= ({ click }: any) => {
   
         <div className="relative flex justify-between w-full pr-5">
           <div className="flex gap-3">
-            <CustomImage src="../images/Laptop.webp" height={100} width={100} alt=""/>
+            <CustomImage src="/images/Laptop.webp" height={100} width={100} alt=""/>
             <div className="flex flex-col justify-center">
               <span className="sm:text-xl max-w-[200px] sm:max-w-[400px] truncate">Corsair K95 RGB Platinum XT</span>
               <span className="max-sm:text-xs"> 3 <span className={`${titilium.className}`}> x </span> $/4000 </span>

@@ -58,9 +58,9 @@ export default function Page() {
                 </UnitsSolds>
               </div>
 
-              <CustomImage src={products[0].imgs[0]} height={400} width={400} alt="" className="filter saturate-200 max-md:w-[300px] h-auto"/>
+              <CustomImage src={"/images/Laptop.webp"} height={400} width={400} alt="" className="filter saturate-200 max-md:w-[300px] h-auto"/>
 
-               <p className={`${titilium.className }  text-base md:text-2xl font-thin line-clamp-3 text-gray-300 sm:max-w-4xl`}>{products[3].descripcion}</p>
+               <p className={`${titilium.className }  text-base md:text-2xl font-thin line-clamp-3 text-gray-300 sm:max-w-4xl`}>{products[3].description}</p>
 
             </div>
 

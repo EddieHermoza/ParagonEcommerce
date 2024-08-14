@@ -1,25 +1,64 @@
 'use client';
-import { products } from "@/app/data/data";
-import { CustomImage } from "@/components/ui";
+import { useState } from "react";
+import { providers } from "@/app/data/data";
+import {Provider} from "@/types/types"
 import {AiOutlineInfoCircle} from "react-icons/ai"
 import {RiDeleteBin6Line} from "react-icons/ri"
 import { FiEdit } from "react-icons/fi";
 import { MdOutlineUnfoldMore } from "react-icons/md";
 import {Pagination} from "@/components/ui";
 import { Suspense } from "react";
+import { HiOutlineArrowsUpDown } from "react-icons/hi2";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover"
+
+type SortConfig = {
+  key: keyof Provider;
+  order: 'asc' | 'desc';
+}
+
+
 export default function ProvidersTbl() {
+
+  const [sortConfig, setSortConfig] = useState<SortConfig>({ key: 'id', order: 'desc' });
+  const [sortedProviders, setSortedProviders] = useState <Provider[]>(providers);
+
+  const handleSort = (key: keyof Provider) => {
+
+    const order = sortConfig.key === key && sortConfig.order === 'asc' ? 'desc' : 'asc';
+
+    setSortConfig({ key, order });
+
+    const sortedData = [...providers].sort((a, b) => {
+
+      if (a[key] < b[key]) {
+        return order === 'asc' ? -1 : 1;
+      }
+
+      if (a[key] > b[key]) {
+        return order === 'asc' ? 1 : -1;
+      }
+
+      return 0;
+
+    });
+
+    setSortedProviders(sortedData);
+  };
+
   return (
     <section className="w-full flex flex-col gap-5">
     <table className="table-auto text-center w-full">
       <thead className=" border-b-aorus border-b  relative text-sm lg:text-base ">
         <tr className="h-16">
-          <td className="" >
-            Codigo
+          <td >
+            <button onClick={() => handleSort('id')} className='flex-center  gap-2 mx-auto  active:bg-pressed hover:bg-neutral-900 p-2 rounded'>
+                <HiOutlineArrowsUpDown/>
+                Id
+            </button>
           </td>
           <td className="text-left max-lg:hidden">
             Ruc
@@ -27,10 +66,10 @@ export default function ProvidersTbl() {
           <td className="sm:text-left">
             Nombre
           </td>
-          <td className="max-md:hidden">
+          <td >
             Número
           </td>
-          <td className="">
+          <td className="max-md:hidden">
             Correo
           </td>
           <td className="max-lg:hidden">
@@ -43,30 +82,30 @@ export default function ProvidersTbl() {
             Modificado
           </td>
           <td className="">
-            Acciones
+            
           </td>
         </tr>
       </thead>
       <tbody className="text-xs sm:text-sm relative">
-        {products.map((product, index) => (
+        {sortedProviders.map((provider, index) => (
           <tr key={index} className="hover:bg-neutral-900 duration-300 relative h-24">
             <td className=" rounded-l-lg">
-              {index}
+              {provider.id}
             </td>
             <td className="text-left  max-lg:hidden">
-              12345678912
+              {provider.ruc}
             </td>
             <td className="sm:text-left">
-              {product.name}
-            </td>
-            <td className="max-md:hidden">
-              995468795
+              {provider.name}
             </td>
             <td>
-              aea@gmail.com
+              {provider.number}
+            </td>
+            <td className="max-md:hidden">
+              {provider.email}
             </td>
             <td className="max-lg:hidden">
-              www.aea.com
+              {provider.web}
             </td>
             <td className="max-xl:hidden">
               27-06-2024

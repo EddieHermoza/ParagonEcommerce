@@ -7,7 +7,8 @@ export const brands = [
     banner_mobile:"MSI_Mobile.webp",
     name: "AORUS",
     slug: "aorus",
-    description: "AORUS ofrece una amplia gama de productos de alta gama para entusiastas de los juegos y la informática. Desde placas base y tarjetas gráficas hasta periféricos y componentes de PC, AORUS se centra en ofrecer un rendimiento excepcional y una estética impresionante para los jugadores más exigentes." 
+    description: "AORUS ofrece una amplia gama de productos de alta gama para entusiastas de los juegos y la informática. Desde placas base y tarjetas gráficas hasta periféricos y componentes de PC, AORUS se centra en ofrecer un rendimiento excepcional y una estética impresionante para los jugadores más exigentes." ,
+    status: 1,
   },
   { 
     id: 4,
@@ -15,7 +16,8 @@ export const brands = [
     banner_mobile:"MSI_Mobile.webp",
     name: "ROG (Republic of Gamers)",
     slug: "rog",
-    description: "ROG (Republic of Gamers) es una marca de ASUS que se especializa en productos de hardware y software de alta gama para jugadores. Sus productos incluyen portátiles para juegos, placas base, tarjetas gráficas, monitores, auriculares y más. ROG se destaca por su rendimiento extremo, diseño innovador y características avanzadas para satisfacer las demandas de los jugadores más exigentes." 
+    description: "ROG (Republic of Gamers) es una marca de ASUS que se especializa en productos de hardware y software de alta gama para jugadores. Sus productos incluyen portátiles para juegos, placas base, tarjetas gráficas, monitores, auriculares y más. ROG se destaca por su rendimiento extremo, diseño innovador y características avanzadas para satisfacer las demandas de los jugadores más exigentes.",
+    status: 1, 
   },
   { 
     id: 52,
@@ -23,7 +25,8 @@ export const brands = [
     banner_mobile:"MSI_Mobile.webp",
     name: "MSI",
     slug: "msi",
-    description: "MSI (Micro-Star International) es una empresa líder en tecnología que fabrica una amplia gama de productos de hardware, incluidas placas base, tarjetas gráficas, portátiles, escritorios, monitores y periféricos para juegos. Con un enfoque en la innovación y la calidad, MSI se ha ganado una reputación como una marca confiable para los jugadores y los profesionales de la informática." 
+    description: "MSI (Micro-Star International) es una empresa líder en tecnología que fabrica una amplia gama de productos de hardware, incluidas placas base, tarjetas gráficas, portátiles, escritorios, monitores y periféricos para juegos. Con un enfoque en la innovación y la calidad, MSI se ha ganado una reputación como una marca confiable para los jugadores y los profesionales de la informática." ,
+    status: 1,
   },
   { 
     id: 75,
@@ -31,7 +34,8 @@ export const brands = [
     banner_mobile:"MSI_Mobile.webp",
     name: "EVGA",
     slug: "evga",
-    description: "EVGA es conocida por sus tarjetas gráficas de alta gama, fuentes de alimentación, placas base y productos de refrigeración para PC. La compañía se enfoca en ofrecer productos de calidad y alto rendimiento para satisfacer las necesidades de los entusiastas de los juegos y la informática. Con una sólida reputación en el mercado, EVGA se ha convertido en una marca confiable para los usuarios avanzados." 
+    description: "EVGA es conocida por sus tarjetas gráficas de alta gama, fuentes de alimentación, placas base y productos de refrigeración para PC. La compañía se enfoca en ofrecer productos de calidad y alto rendimiento para satisfacer las necesidades de los entusiastas de los juegos y la informática. Con una sólida reputación en el mercado, EVGA se ha convertido en una marca confiable para los usuarios avanzados.",
+    status: 1, 
   },
   { 
     id: 82,
@@ -39,7 +43,8 @@ export const brands = [
     banner_mobile:"MSI_Mobile.webp",
     name: "Corsair",
     slug: "corsair",
-    description: "Corsair es una empresa líder en tecnología que ofrece una amplia gama de productos de hardware y periféricos para juegos y PC de alta gama. Desde teclados y ratones hasta refrigeración líquida y fuentes de alimentación, Corsair se centra en la innovación, el rendimiento y la confiabilidad para satisfacer las demandas de los jugadores y los profesionales de la informática." 
+    description: "Corsair es una empresa líder en tecnología que ofrece una amplia gama de productos de hardware y periféricos para juegos y PC de alta gama. Desde teclados y ratones hasta refrigeración líquida y fuentes de alimentación, Corsair se centra en la innovación, el rendimiento y la confiabilidad para satisfacer las demandas de los jugadores y los profesionales de la informática.",
+    status: 1,  
   },
   { 
     id: 13,
@@ -47,7 +52,8 @@ export const brands = [
     banner_mobile:"MSI_Mobile.webp",
     name: "JBL",
     slug: "jbl",
-    description: "JBL es una marca reconocida mundialmente por sus productos de audio de alta calidad. Desde altavoces portátiles hasta sistemas de cine en casa, JBL ofrece una experiencia de audio envolvente y nítida para satisfacer las necesidades de los amantes de la música y el entretenimiento." 
+    description: "JBL es una marca reconocida mundialmente por sus productos de audio de alta calidad. Desde altavoces portátiles hasta sistemas de cine en casa, JBL ofrece una experiencia de audio envolvente y nítida para satisfacer las necesidades de los amantes de la música y el entretenimiento.",
+    status: 1,  
   },
   { 
     id: 34,
@@ -55,7 +61,8 @@ export const brands = [
     banner_mobile:"MSI_Mobile.webp",
     name: "BOSE",
     slug: "bose",
-    description: "BOSE es una marca líder en el mercado de audio conocida por su calidad de sonido excepcional y su innovación en el diseño de productos. Con una amplia gama de altavoces, auriculares, sistemas de cine en casa y más, BOSE ofrece una experiencia de audio premium para los amantes de la música y el entretenimiento en todo el mundo." 
+    description: "BOSE es una marca líder en el mercado de audio conocida por su calidad de sonido excepcional y su innovación en el diseño de productos. Con una amplia gama de altavoces, auriculares, sistemas de cine en casa y más, BOSE ofrece una experiencia de audio premium para los amantes de la música y el entretenimiento en todo el mundo.",
+    status: 1,  
   },
   { 
     id: 12,
@@ -63,7 +70,8 @@ export const brands = [
     banner_mobile:"MSI_Mobile.webp",
     name: "Logitech",
     slug: "logitech",
-    description: "Logitech es una empresa líder en tecnología que ofrece una amplia gama de productos de hardware y software para usuarios individuales y empresas. Desde ratones y teclados hasta cámaras web y software de colaboración, Logitech se centra en mejorar la productividad y la experiencia del usuario en todo el mundo." 
+    description: "Logitech es una empresa líder en tecnología que ofrece una amplia gama de productos de hardware y software para usuarios individuales y empresas. Desde ratones y teclados hasta cámaras web y software de colaboración, Logitech se centra en mejorar la productividad y la experiencia del usuario en todo el mundo.",
+    status: 1,  
   },
   { 
     id: 111,
@@ -71,7 +79,8 @@ export const brands = [
     banner_mobile:"MSI_Mobile.webp",
     name: "Razer",
     slug: "razer",
-    description: "Razer es una marca reconocida por sus productos de alta calidad diseñados específicamente para jugadores. Desde teclados y ratones hasta auriculares y portátiles, Razer se enfoca en ofrecer tecnología innovadora y diseño de vanguardia para proporcionar una ventaja competitiva a los jugadores de todo el mundo." 
+    description: "Razer es una marca reconocida por sus productos de alta calidad diseñados específicamente para jugadores. Desde teclados y ratones hasta auriculares y portátiles, Razer se enfoca en ofrecer tecnología innovadora y diseño de vanguardia para proporcionar una ventaja competitiva a los jugadores de todo el mundo.",
+    status: 1,  
   },
 ];
 
@@ -81,42 +90,48 @@ export const categories = [
     name: "Laptops",
     img: "url",
     slug: "laptops",
-    description: "Descubre nuestra amplia selección de laptops para todas tus necesidades, ya sea para trabajo, estudio o entretenimiento. Encuentra las últimas novedades en tecnología portátil con una variedad de marcas, modelos y especificaciones para satisfacer tus requerimientos."
+    description: "Descubre nuestra amplia selección de laptops para todas tus necesidades, ya sea para trabajo, estudio o entretenimiento. Encuentra las últimas novedades en tecnología portátil con una variedad de marcas, modelos y especificaciones para satisfacer tus requerimientos.",
+    status: 1, 
   },
   { 
     id: 54,
     name: "Mouses",
     img: "url",
     slug: "mouses",
-    description: "Explora nuestra colección de mouses para PC diseñados para mejorar tu productividad y experiencia de juego. Encuentra mouses ergonómicos, con cable e inalámbricos, con una variedad de funciones y estilos para adaptarse a tus necesidades."
+    description: "Explora nuestra colección de mouses para PC diseñados para mejorar tu productividad y experiencia de juego. Encuentra mouses ergonómicos, con cable e inalámbricos, con una variedad de funciones y estilos para adaptarse a tus necesidades.",
+    status: 1, 
   },
   { 
     id: 32,
     name: "Monitores",
     img: "url",
     slug: "monitores",
-    description: "Mejora tu experiencia visual con nuestros monitores de alta calidad. Desde monitores ultrapanorámicos hasta modelos curvos y con resolución 4K, tenemos la pantalla perfecta para tu configuración de escritorio."
+    description: "Mejora tu experiencia visual con nuestros monitores de alta calidad. Desde monitores ultrapanorámicos hasta modelos curvos y con resolución 4K, tenemos la pantalla perfecta para tu configuración de escritorio.",
+    status: 1, 
   },
   { 
     id: 28,
     name: "Teclados",
     img: "url",
     slug: "teclados",
-    description: "Explora nuestra variedad de teclados para PC diseñados para brindar comodidad y rendimiento. Encuentra teclados mecánicos, de membrana, retroiluminados y más, con una variedad de funciones y diseños para mejorar tu experiencia de escritura y juego."
+    description: "Explora nuestra variedad de teclados para PC diseñados para brindar comodidad y rendimiento. Encuentra teclados mecánicos, de membrana, retroiluminados y más, con una variedad de funciones y diseños para mejorar tu experiencia de escritura y juego.",
+    status: 1, 
   },
   { 
     id: 40,
     name: "Parlantes",
     img: "url",
     slug: "parlantes",
-    description: "Disfruta de un sonido envolvente en casa con nuestra selección de parlantes y sistemas de audio. Desde altavoces Bluetooth portátiles hasta sistemas de sonido envolvente para el hogar, tenemos opciones para cada espacio y presupuesto."
+    description: "Disfruta de un sonido envolvente en casa con nuestra selección de parlantes y sistemas de audio. Desde altavoces Bluetooth portátiles hasta sistemas de sonido envolvente para el hogar, tenemos opciones para cada espacio y presupuesto.",
+    status: 1, 
   },
   { 
     id: 71,
     name: "Audífonos",
     img: "url",
     slug: "audifonos",
-    description: "Sumérgete en tu música favorita con nuestros audífonos de alta calidad. Encuentra auriculares inalámbricos, con cancelación de ruido, deportivos y más, diseñados para ofrecer comodidad y rendimiento donde quiera que vayas."
+    description: "Sumérgete en tu música favorita con nuestros audífonos de alta calidad. Encuentra auriculares inalámbricos, con cancelación de ruido, deportivos y más, diseñados para ofrecer comodidad y rendimiento donde quiera que vayas.",
+    status: 1, 
   },
 ];
 
@@ -152,7 +167,8 @@ export const categories = [
         "url9",
       ],
       stock: 10,
-      description: "La MSI GE76 Raider es una potente laptop diseñada para los gamers más exigentes. Con un procesador Intel Core i9, 64 GB de RAM y una tarjeta gráfica NVIDIA GeForce RTX 3080, ofrece un rendimiento excepcional en los juegos más exigentes y aplicaciones de diseño."
+      description: "La MSI GE76 Raider es una potente laptop diseñada para los gamers más exigentes. Con un procesador Intel Core i9, 64 GB de RAM y una tarjeta gráfica NVIDIA GeForce RTX 3080, ofrece un rendimiento excepcional en los juegos más exigentes y aplicaciones de diseño.",
+      status: 1, 
     },
     { 
       id:43,
@@ -184,10 +200,11 @@ export const categories = [
         "url9",
       ],
       stock: 20,
-      description: "El Logitech G Pro X Superlight es un mouse inalámbrico diseñado para jugadores profesionales. Con un sensor HERO 25K de alta precisión y una duración de batería de hasta 70 horas, ofrece un rendimiento excepcional en las sesiones de juego más largas."
+      description: "El Logitech G Pro X Superlight es un mouse inalámbrico diseñado para jugadores profesionales. Con un sensor HERO 25K de alta precisión y una duración de batería de hasta 70 horas, ofrece un rendimiento excepcional en las sesiones de juego más largas.",
+      status: 1, 
     },
     { 
-      id:1,
+      id:10230,
       name: "Razer DeathAdder V2",
       price: 80,
       rating: 4.3,
@@ -213,7 +230,8 @@ export const categories = [
         "url9",
       ],
       stock: 15,
-      description: "El Razer DeathAdder V2 es un mouse para juegos con cable que ofrece una experiencia de juego precisa y cómoda. Con un sensor óptico de alta precisión y botones programables, es ideal para jugadores de cualquier nivel."
+      description: "El Razer DeathAdder V2 es un mouse para juegos con cable que ofrece una experiencia de juego precisa y cómoda. Con un sensor óptico de alta precisión y botones programables, es ideal para jugadores de cualquier nivel.",
+      status: 1, 
     },
     { 
       id:12,
@@ -244,7 +262,8 @@ export const categories = [
         "url9",
       ],
       stock: 8,
-      description: "El LG UltraGear 27GN950-B es un monitor gaming de alta gama con una pantalla de 27 pulgadas y resolución 4K. Con una tasa de actualización de 144Hz y tecnología HDR, ofrece una experiencia visual impresionante para los jugadores más exigentes."
+      description: "El LG UltraGear 27GN950-B es un monitor gaming de alta gama con una pantalla de 27 pulgadas y resolución 4K. Con una tasa de actualización de 144Hz y tecnología HDR, ofrece una experiencia visual impresionante para los jugadores más exigentes.",
+      status: 1, 
     },
     { 
       id:73,
@@ -270,7 +289,8 @@ export const categories = [
         "url3",
       ],
       stock: 12,
-      description: "El ASUS ROG Swift PG279QM es un monitor gaming de alta gama con una pantalla de 27 pulgadas y resolución 1440p. Con una tasa de actualización de 240Hz y tecnología HDR, ofrece una experiencia de juego suave y visualmente impresionante."
+      description: "El ASUS ROG Swift PG279QM es un monitor gaming de alta gama con una pantalla de 27 pulgadas y resolución 1440p. Con una tasa de actualización de 240Hz y tecnología HDR, ofrece una experiencia de juego suave y visualmente impresionante.",
+      status: 1, 
     },
     { 
       id:124,
@@ -302,7 +322,8 @@ export const categories = [
         "url9",
       ],
       stock: 5,
-      description: "El Corsair K95 RGB Platinum XT es un teclado mecánico de alta gama con retroiluminación RGB por tecla. Con interruptores Cherry MX Speed y teclas programables, ofrece una experiencia de escritura rápida y personalizable para jugadores y profesionales."
+      description: "El Corsair K95 RGB Platinum XT es un teclado mecánico de alta gama con retroiluminación RGB por tecla. Con interruptores Cherry MX Speed y teclas programables, ofrece una experiencia de escritura rápida y personalizable para jugadores y profesionales.",
+      status: 1, 
     },
     { 
       id:85,
@@ -331,7 +352,8 @@ export const categories = [
         "url9",
       ],
       stock: 3,
-      description: "El SteelSeries Apex Pro es un teclado mecánico de alta gama con interruptores SteelSeries OmniPoint ajustables. Con retroiluminación RGB por tecla y teclas programables, ofrece una experiencia de escritura personalizable para jugadores y profesionales exigentes."
+      description: "El SteelSeries Apex Pro es un teclado mecánico de alta gama con interruptores SteelSeries OmniPoint ajustables. Con retroiluminación RGB por tecla y teclas programables, ofrece una experiencia de escritura personalizable para jugadores y profesionales exigentes.",
+      status: 1, 
     },
     { 
       id:53,
@@ -362,7 +384,8 @@ export const categories = [
         "url9",
       ],
       stock: 7,
-      description: "El Bose SoundLink Revolve+ es un parlante inalámbrico portátil con un sonido potente y envolvente de alta calidad. Con una duración de la batería de hasta 17 horas y resistencia al agua, es perfecto para usar en interiores y exteriores."
+      description: "El Bose SoundLink Revolve+ es un parlante inalámbrico portátil con un sonido potente y envolvente de alta calidad. Con una duración de la batería de hasta 17 horas y resistencia al agua, es perfecto para usar en interiores y exteriores.",
+      status: 1, 
     },
     { 
       id:23,
@@ -389,6 +412,157 @@ export const categories = [
         "url4",
       ],
       stock: 11,
-      description: "El JBL Charge 5 es un parlante portátil con una batería de larga duración y resistencia al agua. Con la función PartyBoost, puedes conectar múltiples parlantes JBL para una experiencia de sonido aún más envolvente."
+      description: "El JBL Charge 5 es un parlante portátil con una batería de larga duración y resistencia al agua. Con la función PartyBoost, puedes conectar múltiples parlantes JBL para una experiencia de sonido aún más envolvente.",
+      status: 1, 
+    },
+  ];
+
+  export const customers = [
+    {
+      id: 10234,
+      name: "John",
+      lastName: "Doe",
+      email: "john.doe@example.com",
+      status: 1,
+    },
+    {
+      id: 87459,
+      name: "Jane",
+      lastName: "Smith",
+      email: "jane.smith@example.com",
+      status: 0,
+    },
+    {
+      id: 29345,
+      name: "Michael",
+      lastName: "Johnson",
+      email: "michael.johnson@example.com",
+      status: 1,
+    },
+    {
+      id: 45782,
+      name: "Emily",
+      lastName: "Davis",
+      email: "emily.davis@example.com",
+      status: 0,
+    },
+    {
+      id: 64923,
+      name: "William",
+      lastName: "Brown",
+      email: "william.brown@example.com",
+      status: 1,
+    },
+    {
+      id: 73658,
+      name: "Olivia",
+      lastName: "Jones",
+      email: "olivia.jones@example.com",
+      status: 0,
+    },
+    {
+      id: 58147,
+      name: "James",
+      lastName: "Garcia",
+      email: "james.garcia@example.com",
+      status: 1,
+    },
+    {
+      id: 19283,
+      name: "Sophia",
+      lastName: "Martinez",
+      email: "sophia.martinez@example.com",
+      status: 0,
+    },
+    {
+      id: 38475,
+      name: "Alexander",
+      lastName: "Rodriguez",
+      email: "alexander.rodriguez@example.com",
+      status: 1,
+    },
+  ];
+
+  export const providers = [
+    {
+      id: 78345,
+      ruc: 10123456789,
+      name: "Tech Solutions",
+      number: 987654321,
+      email: "contact@techsolutions.com",
+      web: "www.techsolutions.com",
+      status: 1,
+    },
+    {
+      id: 45872,
+      ruc: 10198765432,
+      name: "Global Supplies",
+      number: 912345678,
+      email: "support@globalsupplies.com",
+      web: "www.globalsupplies.com",
+      status: 0,
+    },
+    {
+      id: 23984,
+      ruc: 10234567890,
+      name: "Green Energy",
+      number: 976543210,
+      email: "info@greenenergy.com",
+      web: "www.greenenergy.com",
+      status: 1,
+    },
+    {
+      id: 56123,
+      ruc: 10345678901,
+      name: "Urban Goods",
+      number: 965432198,
+      email: "sales@urbangoods.com",
+      web: "www.urbangoods.com",
+      status: 0,
+    },
+    {
+      id: 34567,
+      ruc: 10456789012,
+      name: "Skyline Corp",
+      number: 954321987,
+      email: "hello@skylinecorp.com",
+      web: "www.skylinecorp.com",
+      status: 1,
+    },
+    {
+      id: 82345,
+      ruc: 10567890123,
+      name: "NextGen Tech",
+      number: 943219876,
+      email: "service@nextgentech.com",
+      web: "www.nextgentech.com",
+      status: 0,
+    },
+    {
+      id: 67891,
+      ruc: 10678901234,
+      name: "Innovative Solutions",
+      number: 932198765,
+      email: "contact@innovativesolutions.com",
+      web: "www.innovativesolutions.com",
+      status: 1,
+    },
+    {
+      id: 21436,
+      ruc: 10789012345,
+      name: "Eco-Friendly Products",
+      number: 921987654,
+      email: "support@ecofriendly.com",
+      web: "www.ecofriendly.com",
+      status: 0,
+    },
+    {
+      id: 49673,
+      ruc: 10890123456,
+      name: "Future Tech",
+      number: 910987654,
+      email: "info@futuretech.com",
+      web: "www.futuretech.com",
+      status: 1,
     },
   ];

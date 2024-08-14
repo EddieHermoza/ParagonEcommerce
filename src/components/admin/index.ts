@@ -12,3 +12,6 @@ export { default as InventoryTbl} from "./inventory/InventoryTbl"
 export {default as ProvidersTbl} from "./providers/ProvidersTbl" 
 export {default as BrandsTbl} from "./brands/BrandsTbl" 
 export {default as CategoriesTbl } from "./categories/CategoriesTbl"
+export {default as TopProductsContainer} from "./dashboard/TopProductsContainer"
+
+export * from "./dashboard/DashboardCards"

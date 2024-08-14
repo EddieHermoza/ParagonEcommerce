@@ -102,8 +102,12 @@ export default function BrandsTbl() {
             <td className="text-left">
               {brand.name}
             </td>
-            <td>
-              Activo
+            <td className=
+              {`text-shadow-lg ${
+                  brand.status === 1 ? 'text-green-500 shadow-green-500/50' :  'text-red-500 shadow-red-500/50'
+              }`}
+              >
+              {brand.status === 1 ? 'Activo' : 'Inactivo'}
             </td>
             <td className="max-lg:hidden">
               27-06-2024

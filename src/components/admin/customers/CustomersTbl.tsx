@@ -1,36 +1,81 @@
 'use client';
-import { products } from "@/app/data/data";
-import { CustomImage } from "@/components/ui";
+import { useState } from "react";
+import { customers } from "@/app/data/data";
+import {Customer} from "@/types/types"
 import {AiOutlineInfoCircle} from "react-icons/ai"
 import {RiDeleteBin6Line} from "react-icons/ri"
 import { FiEdit } from "react-icons/fi";
 import { MdOutlineUnfoldMore } from "react-icons/md";
 import {Pagination} from "@/components/ui"; 
 import { Suspense } from "react";
+import { HiOutlineArrowsUpDown } from "react-icons/hi2";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover"
+
+
+
+type SortConfig = {
+  key: keyof Customer;
+  order: 'asc' | 'desc';
+}
+
 export default function CustomersTbl() {
+
+  const [sortConfig, setSortConfig] = useState<SortConfig>({ key: 'id', order: 'desc' });
+  const [sortedCustomers, setSortedCustomers] = useState <Customer[]>(customers);
+
+  const handleSort = (key: keyof Customer) => {
+
+    const order = sortConfig.key === key && sortConfig.order === 'asc' ? 'desc' : 'asc';
+
+    setSortConfig({ key, order });
+
+    const sortedData = [...customers].sort((a, b) => {
+
+      if (a[key] < b[key]) {
+        return order === 'asc' ? -1 : 1;
+      }
+
+      if (a[key] > b[key]) {
+        return order === 'asc' ? 1 : -1;
+      }
+
+      return 0;
+
+    });
+
+    setSortedCustomers(sortedData);
+  };
   return (
     <section className="w-full flex flex-col gap-5">
     <table className="table-auto text-center w-full">
       <thead className=" border-b-aorus border-b  relative text-sm lg:text-base">
         <tr className="h-16">
           <td >
-            Codigo
+            <button onClick={() => handleSort('id')} className='flex-center  gap-2 mx-auto  active:bg-pressed hover:bg-neutral-900 p-2 rounded'>
+                <HiOutlineArrowsUpDown/>
+                Id
+            </button>
           </td>
-          <td className="text-left">
-            Nombres
+          <td >
+            <button onClick={() => handleSort('name')} className='flex-center gap-2 mx-auto active:bg-pressed hover:bg-neutral-900 p-2 rounded'>
+                <HiOutlineArrowsUpDown/>
+                Nombre
+            </button>
           </td>
-          <td className="text-left max-lg:hidden">
-            Apellidos
+          <td className=" ">
+            <button onClick={() => handleSort('lastName')} className='flex-center gap-2 mx-auto active:bg-pressed hover:bg-neutral-900 p-2 rounded'>
+                <HiOutlineArrowsUpDown/>
+                Apellidos
+            </button>
           </td>
           <td className="max-lg:hidden">
             Estado
           </td>
-          <td>
+          <td className="max-md:hidden">
             Correo
           </td>
           <td className="max-xl:hidden">
@@ -39,28 +84,32 @@ export default function CustomersTbl() {
           <td className="max-xl:hidden">
             Modificado
           </td>
-          <td className="">
-            Acciones
+          <td>
+
           </td>
         </tr>
       </thead>
       <tbody className="text-xs sm:text-sm relative">
-        {products.map((product, index) => (
+        {sortedCustomers.map((customer, index) => (
           <tr key={index} className="hover:bg-neutral-900 duration-300 relative h-24">
             <td className=" rounded-l-lg">
-              {index}
-            </td>
-            <td className="text-left">
-              {product.name}
-            </td>
-            <td className="text-left max-lg:hidden">
-              {product.name}
-            </td>
-            <td className="max-lg:hidden">
-              Activo
+              {customer.id}
             </td>
             <td>
-              {product.slug}
+              {customer.name}
+            </td>
+            <td className="">
+              {customer.lastName}
+            </td>
+            <td className=
+              {`max-lg:hidden text-shadow-lg ${
+                customer.status === 1 ? 'text-green-500 shadow-green-500/50' :  'text-red-500 shadow-red-500/50'
+              }`}
+              >
+              {customer.status === 1 ? 'Activo' : 'Inactivo'}
+            </td>
+            <td className="max-md:hidden">
+              {customer.email}
             </td>
             <td className="max-xl:hidden">
               27-06-2024

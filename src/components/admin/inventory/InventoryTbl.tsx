@@ -94,8 +94,12 @@ export default function ProductsTbl() {
             <td className="text-left max-sm:text-xs">
               {product.name}
             </td>
-            <td className="max-lg:hidden">
-              Activo
+            <td className=
+              {`max-lg:hidden text-shadow-lg ${
+                product.status === 1 ? 'text-green-500 shadow-green-500/50' :  'text-red-500 shadow-red-500/50'
+              }`}
+              >
+              {product.status === 1 ? 'Activo' : 'Inactivo'}
             </td>
             <td className=
               {`text-shadow-lg ${

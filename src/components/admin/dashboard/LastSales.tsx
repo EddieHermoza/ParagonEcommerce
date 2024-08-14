@@ -21,7 +21,7 @@ const LastSaleCard = ()=>{
                 <span className="max-sm:text-xs text-sm text-gray-400">eddie.ehc04@gmail.com</span>
             </div>
             <div className="absolute bottom-1 right-1 ">
-                <span className="max-sm:text-xl text-2xl">+$100000</span>
+                <span className="max-sm:text-lg text-xl">+$100000</span>
             </div>
         </li>
     )   

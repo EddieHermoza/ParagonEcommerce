@@ -49,6 +49,7 @@ export default function ProductsTbl() {
 
     setSortedProducts(sortedData);
   };
+  
   return (
 
   <section className="w-full flex flex-col gap-5">
@@ -95,7 +96,7 @@ export default function ProductsTbl() {
       <tbody className="text-sm relative">
         {sortedProducts.map((product, index) => (
           <tr key={index} className="hover:bg-neutral-900 duration-300 relative h-24">
-            <td className=" rounded-l-lg ">
+            <td className=" rounded-l-lg">
               {product.id}
             </td>
             <td>
@@ -104,8 +105,12 @@ export default function ProductsTbl() {
             <td className="text-left max-sm:text-xs">
               {product.name}
             </td>
-            <td className="max-sm:hidden">
-              Activo
+            <td className=
+              {`max-sm:hidden text-shadow-lg ${
+                product.status === 1 ? 'text-green-500 shadow-green-500/50' :  'text-red-500 shadow-red-500/50'
+              }`}
+              >
+              {product.status === 1 ? 'Activo' : 'Inactivo'}
             </td>
             <td className="max-sm:hidden">
               $/ {product.price}

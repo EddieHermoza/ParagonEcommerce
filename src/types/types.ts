@@ -24,6 +24,25 @@
     imgs: string[];
     stock: number;
     description: string;
+    status: number;
+  }
+
+  export type Customer= {
+    id: number;
+    name: string;
+    lastName: string;
+    email:string;
+    status: number;
+  }
+
+  export type Provider= {
+    id: number;
+    ruc:number;
+    name: string;
+    number:number;
+    email:string;
+    web:string;
+    status: number;
   }
 
   export type Category = {
@@ -32,6 +51,7 @@
     slug: string,
     img:string,
     description: string,
+    status: number,
   }
 
   export type Brand = {
@@ -41,4 +61,5 @@
     name: string;
     slug: string;
     description: string;
+    status: number;
   }

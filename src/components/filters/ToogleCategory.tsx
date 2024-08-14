@@ -28,14 +28,14 @@ export default function ToogleCategory() {
   }
     return (
       <Select onValueChange={handleCategory}  defaultValue={searchParams.get('category') ? searchParams.get('category')?.toString() : undefined}>
-        <SelectTrigger className=" lg:max-w-[500px] w-full outline-none h-12 border text-base  rounded-none hover:bg-neutral-950 duration-300 hover:border-aorus focus:ring-0 focus:ring-offset-0 ">
+        <SelectTrigger className=" lg:max-w-[500px] w-full h-12 ">
           <span>Categoria: </span>
           <SelectValue placeholder="Todas" />
         </SelectTrigger>
         <SelectContent className="bg-black " position="popper" sideOffset={10} hideWhenDetached>
-          <SelectItem className="hover:bg-aorus duration-300 cursor-pointer" value="Todas">Todas</SelectItem>
+          <SelectItem value="Todas">Todas</SelectItem>
           {categories.map((category,index)=>(
-            <SelectItem key={index} className="hover:bg-aorus duration-300 cursor-pointer" value={category.name}>{category.name}</SelectItem>
+            <SelectItem key={index}  value={category.name}>{category.name}</SelectItem>
           ))}
 
         </SelectContent>

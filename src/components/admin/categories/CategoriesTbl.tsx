@@ -97,8 +97,12 @@ export default function CategoriesTbl() {
               <td>
                 {category.name}
               </td>
-              <td className="max-sm:hidden">
-                Activo
+              <td className=
+                {`max-sm:hidden text-shadow-lg ${
+                  category.status === 1 ? 'text-green-500 shadow-green-500/50' :  'text-red-500 shadow-red-500/50'
+                }`}
+                >
+                {category.status === 1 ? 'Activo' : 'Inactivo'}
               </td>
               <td className="max-lg:hidden">
                 27-06-2024
