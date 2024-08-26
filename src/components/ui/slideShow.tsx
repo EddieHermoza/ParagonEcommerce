@@ -74,7 +74,7 @@ export default function SlideShow({imgs,buttons}:Props) {
             <CarouselItem key={index} >
               <div className="w-full flex-center h-full">
                 <CustomImage
-                  src={img}
+                  src={"/images/Laptop.webp"}
                   height={400}
                   width={400}
                   alt=""
@@ -114,7 +114,7 @@ export default function SlideShow({imgs,buttons}:Props) {
                 <CarouselItem key={index} className=" basis-1/3 lg:basis-1/4 2xl:basis-1/5">
                     <div className={`h-full flex-center hover:bg-neutral-900 cursor-pointer border duration-300 ${index===currentSlide ? "border-aorus":""}`} onClick={()=>handlePrincipalCarousel(index)}>
                         <CustomImage
-                        src={img}
+                        src={"/images/Laptop.webp"}
                         height={80}
                         width={80}
                         alt=""
