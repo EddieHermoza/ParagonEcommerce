@@ -23,6 +23,7 @@ import {
 
 export default function CreateBrandPage() {
 
+    console.log('pruebacommit');
     return (
     <>
         <h1 className="text-5xl">Nueva marca</h1>
