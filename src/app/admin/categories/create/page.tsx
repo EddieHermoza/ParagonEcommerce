@@ -72,7 +72,7 @@ export default function CreateCategoryPage() {
 
             <ImageCategoryUploader
                 title="Imagen referencial de la categoria"
-                description="Arrastra las imágenes aquí o haz clic para seleccionar"
+                description="Arrastra la imagen aquí o haz clic para seleccionar"
                 recomendation="Se recomienda una resolucion 400 x 400"
             />
         </form>
