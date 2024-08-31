@@ -77,9 +77,8 @@ export default function ImageUploader() {
                 <div className='bg-black w-80 h-80 flex-center shadow-2xl cursor-pointer rounded group border border-dashed border-neutral-700 mx-auto hover:shadow-neutral-700/50 duration-300' onClick={handleClick}>
                     <PiUploadSimpleThin size={40}  className="group-hover:text-aorus text-shadow-lg duration-300 bg-black "/>
                 </div>
-            )
-
-            }
+            )}
+            
             <div className="flex gap-4 flex-wrap py-2 max-w-80 mx-auto">
                 {images.slice(1).map((image, index) => (
                     <div className="" key={index}>

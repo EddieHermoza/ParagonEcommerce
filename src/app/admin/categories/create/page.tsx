@@ -1,8 +1,9 @@
 
 import Link from 'next/link';
 
-import { PiUploadSimpleThin } from "react-icons/pi";
 import { AiOutlineLeft } from "react-icons/ai";
+
+import ImageCategoryUploader from "@/components/admin/inputs/imageCategoryUploader";
 
 import {
     Select,
@@ -68,16 +69,12 @@ export default function CreateCategoryPage() {
                 </div>
 
             </div>
-            <div className="bg-black p-5 rounded border-neutral-800 border flex flex-col gap-5 w-full relative">
-                <h3 className="text-xl tracking-tight leading-none">Imagen referencial de la categoria</h3>
-                <span>Se recomienda una resolucion 400 x 400</span>
-                <div className='bg-neutral-900 max-w-[400px] h-full max-h-[400px] aspect-square m-auto flex-center'>
-                    <PiUploadSimpleThin size={40}/>
-                </div>
 
-            </div>
-
-
+            <ImageCategoryUploader
+                title="Imagen referencial de la categoria"
+                description="Arrastra las imágenes aquí o haz clic para seleccionar"
+                recomendation="Se recomienda una resolucion 400 x 400"
+            />
         </form>
 
     </>
