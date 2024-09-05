@@ -18,7 +18,7 @@ export default function CreateProductPage() {
     <>
         <h1 className="text-4xl">Nuevo Producto</h1>
 
-        <form className="w-full flex gap-7">
+        <form className="w-full flex flex-col lg:flex-row gap-7">
 
             <div className="flex flex-col gap-7 max-w-screen-md w-full">
                 

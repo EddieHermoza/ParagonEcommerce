@@ -57,12 +57,12 @@ export default function ImageCategoryUploader(props: Props) {
   return (
     <div className="bg-black w-full h-full space-y-2 overflow-hidden p-7">
       <div className="z-10 border-2 border-dashed border-gray-400 p-8 rounded h-full flex flex-col justify-center">
-        <div className=" w-full gap-2 flex-center flex-col p-2 my-4">
+        <div className="w-full gap-2 flex-center flex-col p-2 my-4 text-center">
           <h3 className="text-xl tracking-tight leading-none">{title}</h3>
-
           <p className="text-neutral-400">{description}</p>
           {error && <p className="text-red-500 text-sm">{error}</p>}
         </div>
+
         <div
           className="bg-black max-w-[400px] h-full max-h-[400px] aspect-square m-auto flex-center flex-col shadow-2xl cursor-pointer rounded group border border-dashed border-neutral-700 mx-auto hover:shadow-neutral-700/50 duration-300"
           onDrop={handleDrop}
@@ -78,9 +78,7 @@ export default function ImageCategoryUploader(props: Props) {
             ref={inputRef}
           />
           {imageCategory ? (
-            <div
-              className={`relative h-[398px] w-[398px] bg-neutral-900 flex-center`}
-            >
+            <div className="relative w-full h-full max-w-[400px] max-h-[400px] bg-neutral-900 flex-center">
               <img
                 src={URL.createObjectURL(imageCategory)}
                 alt={`Imagen ${+1}`}
@@ -92,9 +90,9 @@ export default function ImageCategoryUploader(props: Props) {
             <>
               <PiUploadSimpleThin
                 size={40}
-                className="group-hover:text-aorus text-shadow-lg duration-300 bg-black "
+                className="group-hover:text-aorus text-shadow-lg duration-300 bg-black"
               />
-              <span className="group-hover:text-aorus text-shadow-lg duration-300 bg-black ">
+              <span className="group-hover:text-aorus text-shadow-lg duration-300 bg-black text-center">
                 {recomendation}
               </span>
             </>

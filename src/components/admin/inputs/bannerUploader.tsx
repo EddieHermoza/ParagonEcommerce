@@ -56,9 +56,11 @@ export default function BannerUploader(props: Props) {
   };
 
   return (
-    <div className="h-full w-full  border p-10 space-y-5 flex flex-col items-center relative rounded">
-      <span>{type}</span>
-      <span>{recomendation}</span>
+    <div className="h-full w-full  border p-10 space-y-5 flex flex-col items-center  relative rounded">
+      <div className="w-full gap-2 flex-center flex-col p-2  text-center">
+        <span>{type}</span>
+        <span>{recomendation}</span>
+      </div>
 
       {error && <p className="text-red-500 text-sm">{error}</p>}
       <div

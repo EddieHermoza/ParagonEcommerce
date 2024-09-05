@@ -27,7 +27,7 @@ export default function CreateBrandPage() {
     <>
       <h1 className="text-5xl">Nueva marca</h1>
 
-      <form action="" className="w-full flex gap-10 ">
+      <form action="" className="w-full flex flex-col lg:flex-row gap-10 ">
         <div className="space-y-10 w-full max-w-[560px]">
           <div className="flex w-full gap-5">
             <Link
@@ -85,6 +85,8 @@ export default function CreateBrandPage() {
             </label>
           </div>
         </div>
+        
+
         <div className="bg-black p-5 rounded border-neutral-800 border flex flex-col gap-5 w-full relative">
           <h3 className="text-xl tracking-tight leading-none">
             Imagenes de la Marca
