@@ -1,6 +1,8 @@
 "use client";
+import { CustomImage } from "@/components/ui";
 import { useState, ChangeEvent, DragEvent, useRef } from "react";
 import { PiUploadSimpleThin } from "react-icons/pi";
+import Image from "next/image";
 
 export default function ImageUploader() {
   const [images, setImages] = useState<File[]>([]);
@@ -66,7 +68,7 @@ export default function ImageUploader() {
             </div>
             {images.length > 0 ? (
                 <div className="mx-auto w-72 h-72 lg:w-80 lg:h-80 mb-8 lg:mb-2">
-                    <img
+                    <Image
                     src={URL.createObjectURL(images[0])}
                     alt={`Imagen ${ + 1}`}
                     className="object-cover w-80 h-80 rounded"
@@ -84,7 +86,7 @@ export default function ImageUploader() {
             <div className="flex gap-4 flex-wrap py-2 max-w-80 justify-center lg:mx-auto">
                 {images.slice(1).map((image, index) => (
                     <div className="" key={index}>
-                        <img
+                        <Image
                         src={URL.createObjectURL(image)}
                         alt={`Imagen ${index + 1}`}
                         className="object-cover w-[136px] h-[136px] lg:h-24 lg:w-24 rounded"

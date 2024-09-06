@@ -2,7 +2,7 @@
 
 import React, { ChangeEvent, useRef, useState, DragEvent } from "react";
 import { PiUploadSimpleThin } from "react-icons/pi";
-
+import Image from "next/image";
 type Props = {
   title: string;
   description: string;
@@ -79,7 +79,7 @@ export default function ImageCategoryUploader(props: Props) {
           />
           {imageCategory ? (
             <div className="relative w-full h-full max-w-[400px] max-h-[400px] bg-neutral-900 flex-center">
-              <img
+              <Image
                 src={URL.createObjectURL(imageCategory)}
                 alt={`Imagen ${+1}`}
                 className="w-full h-full object-cover rounded"
