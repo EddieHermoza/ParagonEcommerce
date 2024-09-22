@@ -1,15 +1,14 @@
-import type { Config } from "tailwindcss"
-
+import type { Config } from "tailwindcss";
 const plugin = require('tailwindcss/plugin')
 
-const config = {
+const config: Config = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
-	],
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+  ],
   prefix: "",
   theme: {
     container: {
@@ -19,25 +18,62 @@ const config = {
         "2xl": "1400px",
       },
     },
-    borderRadius: {
-      'none': '0',
-      'sm': '0.125rem',
-      DEFAULT: '0.25rem',
-      'md': '0.375rem',
-      'lg': '0.5rem',
-      'full': '9999px',
-      'large': '12px',
-    },
     extend: {
-
+      transitionDuration: {
+        "3000": "3000ms",
+      },
+      screens: {
+        'xs': '480px'
+      },
+      backgroundImage: {
+        'custom-conic-gradient-light': 'conic-gradient(from 120deg at 50% 64%, transparent, #FFF 1deg 120deg, transparent 121deg)',
+        'custom-conic-gradient-dark': 'conic-gradient(from 120deg at 50% 64%, transparent, #000 1deg 120deg, transparent 121deg)',
+      },
       colors: {
-        'aorus': 'rgb(255, 100, 0)',
-        'pressed':'hsl(240 3.7% 15.9%)',
+        border: "hsl(var(--border))",
+        input: "hsl(var(--input))",
+        ring: "hsl(var(--ring))",
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
+        pressed: "hsl(var(--pressed))",
+        primary: {
+          DEFAULT: "hsl(var(--primary))",
+          foreground: "hsl(var(--primary-foreground))",
+        },
+        secondary: {
+          DEFAULT: "hsl(var(--secondary))",
+          foreground: "hsl(var(--secondary-foreground))",
+        },
+        destructive: {
+          DEFAULT: "hsl(var(--destructive))",
+          foreground: "hsl(var(--destructive-foreground))",
+        },
+        muted: {
+          DEFAULT: "hsl(var(--muted))",
+          foreground: "hsl(var(--muted-foreground))",
+        },
+        accent: {
+          DEFAULT: "hsl(var(--accent))",
+          foreground: "hsl(var(--accent-foreground))",
+        },
+        popover: {
+          DEFAULT: "hsl(var(--popover))",
+          foreground: "hsl(var(--popover-foreground))",
+        },
+        card: {
+          DEFAULT: "hsl(var(--card))",
+          foreground: "hsl(var(--card-foreground))",
+        },
       },
       textShadow: {
         sm: '0 1px 2px var(--tw-shadow-color)',
         DEFAULT: '0 2px 4px var(--tw-shadow-color)',
         lg: '0 8px 16px var(--tw-shadow-color)',
+      },
+      borderRadius: {
+        lg: "var(--radius)",
+        md: "calc(var(--radius) - 2px)",
+        sm: "calc(var(--radius) - 4px)",
       },
       keyframes: {
         "accordion-down": {
@@ -58,6 +94,18 @@ const config = {
   plugins: [
     require("tailwindcss-animate"),
     require('tailwind-scrollbar'),
+    require('tailwindcss-animated'),
+
+    function ({ addUtilities }:any) {
+      const newUtilities = {
+        ".flex-center": {
+          display: "flex",
+          "justify-content": "center",
+          "align-items": "center",
+        },
+      };
+      addUtilities(newUtilities);
+    },
 
     plugin(function ({ matchUtilities , theme  } : { matchUtilities: any, theme: any }) {
       matchUtilities(
@@ -70,10 +118,7 @@ const config = {
       )
     }),
 
-  require('tailwindcss-animated')
-  
   ],
+} satisfies Config;
 
-} satisfies Config
-
-export default config
+export default config;
