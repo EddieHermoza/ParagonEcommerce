@@ -1,6 +1,5 @@
 import Link from "next/link";
 
-import { PiUploadSimpleThin } from "react-icons/pi";
 import { AiOutlineLeft } from "react-icons/ai";
 
 import BannerUploader from "@/components/admin/inputs/bannerUploader";

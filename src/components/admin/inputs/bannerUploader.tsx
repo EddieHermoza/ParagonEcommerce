@@ -1,5 +1,6 @@
 "use client";
 
+// import Image from "next/image";
 import { ChangeEvent, useRef, useState, DragEvent } from "react";
 import { PiUploadSimpleThin } from "react-icons/pi";
 import Image from "next/image";
