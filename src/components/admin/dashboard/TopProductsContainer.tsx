@@ -21,7 +21,7 @@ export default function TopProductsContainer() {
       <div className="relative flex flex-col w-full gap-2 ">
         <span className="text-xl tracking-widest">Productos más vendidos</span>
         <TopProductsChart data={chartData}/>
-        <span className="text-gray-300">Se mostraran en "Lo más Vendido"</span>
+        <span className="text-gray-300">Se mostraran en Lo más Vendido</span>
       </div>
       
       <div className="relative flex flex-col w-full gap-2 max-lg:items-center justify-evenly ">

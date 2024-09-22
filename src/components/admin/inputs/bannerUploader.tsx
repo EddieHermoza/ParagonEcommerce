@@ -3,7 +3,7 @@
 // import Image from "next/image";
 import { ChangeEvent, useRef, useState, DragEvent } from "react";
 import { PiUploadSimpleThin } from "react-icons/pi";
-
+import Image from "next/image";
 type Props = {
   type: string;
   recomendation: string;
@@ -84,7 +84,7 @@ export default function BannerUploader(props: Props) {
             className={`relative h-auto w-full bg-neutral-900  flex-center`}
             style={{ maxWidth: `${size}px`, aspectRatio: aspect }}
           >
-            <img
+            <Image
               src={URL.createObjectURL(banner)}
               alt={`Imagen ${+1}`}
               className="w-full h-full rounded"

@@ -26,7 +26,7 @@ export function StockSelector() {
     params.set("ticker", value);
     replace(`${pathname}?${params.toString()}`,{ scroll: false });
   };
-
+//sa
   return (
     <div className='w-full flex justify-end'>
       <Select value={currentTicker} onValueChange={handleStockChange}>
