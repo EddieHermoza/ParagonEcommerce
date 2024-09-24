@@ -2,8 +2,8 @@
 import { useState,ChangeEvent } from "react";
 import { IoAdd } from "react-icons/io5";
 import { IoCloseOutline } from "react-icons/io5";
-
-
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui";
 
 export default function ProductEspecificationsInput() {
     const [specifications, setSpecifications] = useState<string[]>([])
@@ -27,20 +27,19 @@ export default function ProductEspecificationsInput() {
     return (
     <div className="h-auto flex flex-col w-full gap-2">   
         <label className="w-full flex gap-2">
-            <input 
+            <Input 
             type="text" 
             value={input}
             onChange={handleInputChange}
-            className="bg-black border focus:border-aorus duration-200 p-2 text-sm rounded w-full outline-none"
             />
-            <div className="border cursor-pointer btn-secondary flex-center p-2 rounded" onClick={handleAdd}>
-                <IoAdd/>
-            </div>
+            <Button onClick={(e) => { e.preventDefault(); handleAdd(); }} size={"icon"} className="h-12 w-12" variant={"outline"}>
+                <IoAdd size={22}/>
+            </Button>
 
         </label>
         <ul className="space-y-2">
             {specifications.map((spec,index)=>(
-                <li key={index} className="flex gap-2 hover:bg-neutral-900 p-2 rounded">
+                <li key={index} className="flex gap-2 hover:bg-muted/50 p-2 rounded">
                     <p>
                         {spec}
                     </p>

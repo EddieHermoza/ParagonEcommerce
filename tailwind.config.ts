@@ -33,6 +33,7 @@ const config: Config = {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
+        hover:"hsl(var(--hover))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         pressed: "hsl(var(--pressed))",

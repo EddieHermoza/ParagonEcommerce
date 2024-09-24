@@ -11,9 +11,7 @@ export default function FilterProductoSection() {
             <div className="flex flex-col gap-14 duration-300">
 
                 <div className="flex items-center justify-between max-lg:flex-col gap-10 max-lg:gap-14  duration-300">
-                    <Suspense>
-                        <SearchByName/>
-                    </Suspense>
+                    <SearchByName/>
                 </div>
 
                 <div className="flex items-center justify-between max-lg:flex-col gap-10 max-lg:gap-14  duration-300">

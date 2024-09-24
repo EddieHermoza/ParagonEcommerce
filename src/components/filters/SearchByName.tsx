@@ -1,40 +1,41 @@
 "use client"
 import { useSearchParams, usePathname, useRouter } from 'next/navigation';
 import { useDebouncedCallback } from 'use-debounce';
-import {AiOutlineSearch} from "react-icons/ai"
+import { IoSearchOutline } from 'react-icons/io5';
+import { Input } from '@/components/ui/input';
 
-export default function SearchByName() {
-    const searchParams=useSearchParams();
+type Props = {
+    className?:string,
+}
+
+export default function SearchByName({className}:Props) {
+
+    const searchParams = useSearchParams();
     const pathname = usePathname();
     const { replace } = useRouter();
 
-    function handleSearch(term:string) {
+    function handleSearch(term: string) {
         const params = new URLSearchParams(searchParams);
-            if (term) {
-                params.set('query', term);
-                params.set('page', '1');
-            } else {
-                params.delete('query');
-                params.set('page', '1');
-            }
-        replace(`${pathname}?${params.toString()}`,{ scroll: false });
-      }
-    const debouncedHandleSearch=useDebouncedCallback(handleSearch,500)
+        if (term) {
+            params.set('query', term);
+            params.set('page', '1');
+        } else {
+            params.delete('query');
+            params.set('page', '1');
+        }
+        replace(`${pathname}?${params.toString()}`, { scroll: false });
+    }
+    const debouncedHandleSearch = useDebouncedCallback(handleSearch, 500)
 
     return (
-            <label htmlFor="" className='flex items-center flex-row-reverse lg:max-w-[500px] w-full h-0 relative '>
-
-            <input 
-                type="text"
-                className="outline-none h-12 w-full  text-base p-2 border-b bg-transparent focus:border-aorus duration-300 peer"
+        <label className="relative flex-center ">
+            <IoSearchOutline className="absolute left-2.5 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+            <Input
                 placeholder="Busqueda"
-                onChange={(e)=>{debouncedHandleSearch(e.target.value)}}
+                className={`${className} rounded-lg bg-background pl-8 w-full duration-200`}
+                onChange={(e) => { debouncedHandleSearch(e.target.value) }}
                 defaultValue={searchParams.get('query')?.toString()}
             />
-
-            <div className="h-12 border-b peer-focus:border-aorus duration-300 flex-center">
-                <AiOutlineSearch  size={30}/>
-            </div>
         </label>
     );
 }

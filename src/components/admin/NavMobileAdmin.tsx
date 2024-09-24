@@ -49,7 +49,7 @@ function NavMobileDashboard() {
   
   return (
         <Sheet >
-            <SheetTrigger className='duration-300 border hover:border-aorus hover:text-aorus bg-black fixed bottom-10 right-10 z-50 max-xl:flex-center xl:hidden p-3 rounded-full'>
+            <SheetTrigger className='duration-200 border hover:border-primary hover:text-primary bg-background fixed bottom-10 right-10 z-50 max-xl:flex-center xl:hidden p-3 rounded-full'>
                 <CgMenuRight size={32} />
             </SheetTrigger>
             <SheetContent side={"left"} className="bg-black border-none flex flex-col gap-5 items-center w-[300px]">

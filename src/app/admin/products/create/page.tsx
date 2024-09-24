@@ -1,5 +1,4 @@
 import Link from "next/link";
-
 import { useState } from "react";
 import {
     Select,
@@ -7,137 +6,169 @@ import {
     SelectItem,
     SelectTrigger,
     SelectValue,
-  } from "@/components/ui/select"
-  
+} from "@/components/ui/select"
+import {
+    Card,
+    CardHeader,
+    CardTitle,
+    CardContent,
+    CardDescription
+} from "@/components/ui/card"
+
 import ProductSpecificationsInput from "@/components/admin/inputs/ProductSpecificationsInput";
 import ImageUploader from "@/components/admin/inputs/ImageUploader";
+import { Button } from "@/components/ui";
+import { MdOutlineChevronLeft } from "react-icons/md";
+import { Textarea } from "@/components/ui/textarea";
+import { Input } from "@/components/ui/input";
 
 export default function CreateProductPage() {
 
     return (
-    <>
-        <h1 className="text-4xl">Nuevo Producto</h1>
+        <>
+            <section className="max-w-screen-2xl w-full mx-auto flex items-center justify-start gap-5">
+                <Button asChild variant={"outline"} size={"icon"} className="rounded-full hover:text-primary">
+                    <Link href={"/admin/products"} ><MdOutlineChevronLeft size={25} /></Link>
+                </Button>
 
-        <form className="w-full flex flex-col lg:flex-row gap-7">
+                <h1 className="text-3xl">Nuevo Producto</h1>
 
-            <div className="flex flex-col gap-7 max-w-screen-md w-full">
-                
-                <div className="bg-black p-5 rounded border-neutral-800 border flex flex-col gap-3 max-w-[300px]">
-                    <h3 className="text-lg tracking-tight leading-none">Estado</h3>
-                    <Select defaultValue="en">
-                        <SelectTrigger className=" w-full text-sm rounded">
-                                <SelectValue/>
-                        </SelectTrigger>
-                        <SelectContent position="popper" sideOffset={5} hideWhenDetached>
-                            <SelectItem value="en">Activo</SelectItem>
-                            <SelectItem value="dis">Inactivo</SelectItem>
-                        </SelectContent>
-                    </Select>
-                </div>
+            </section>
 
-                <div className="bg-black p-5 rounded border-neutral-800 border flex flex-col gap-4">
-                    <h3 className="text-lg tracking-tight leading-none">Detalles del Producto</h3>
-                    <label htmlFor="" className="space-y-2 text-sm">
-                        <span className=" peer-focus:text-white duration-200">Nombre:</span>
-                        <input 
-                        type="text" 
-                        name="" 
-                        id=""
-                        className="peer border w-full outline-none focus:border-aorus p-2 bg-transparent duration-200 rounded" />
-                    </label>
+            <form className="w-full flex flex-col lg:flex-row gap-5 max-w-screen-2xl mx-auto">
 
-                    <label htmlFor="" className="space-y-2 text-sm" >
-                        <span>Descripcion: </span>
-                        <textarea 
-                        name="" 
-                        id="" 
-                        cols={40} 
-                        rows={3}
-                        className="peer border w-full outline-none focus:border-aorus p-2 bg-transparent rounded" ></textarea>
-                    </label>
+                <div className="flex flex-col gap-5 max-w-screen-md w-full">
 
-                    <label htmlFor="" className="space-y-2 text-sm">
-                        <span className=" peer-focus:text-white duration-200">Link para más información:</span>
-                        <input 
-                        type="text" 
-                        name="" 
-                        id=""
-                        className="peer border w-full outline-none focus:border-aorus p-2 bg-transparent duration-200 rounded" />
-                    </label>
-                </div>
-
-                <div className="bg-black p-5 rounded border-neutral-800 border flex  flex-col gap-4 w-full">
-                    <h3 className="text-lg tracking-tight leading-none">Clasificación del Producto</h3>
-                    <div className="flex w-full gap-4">
-                        <div className="space-y-2 text-sm w-full">
-                            <span>Marca:</span>
-                            <Select>
-                                <SelectTrigger className="w-full rounded text-sm">
-                                        <SelectValue placeholder={"Seleccionar"}/>
-                                </SelectTrigger>
-                                <SelectContent position="popper" sideOffset={5} hideWhenDetached>
-                                    <SelectItem value="en">Activo</SelectItem>
-                                    <SelectItem value="dis">Inactivo</SelectItem>
-                                </SelectContent>
-                            </Select>
-                        </div>
-
-                        <div className="space-y-2 text-sm w-full">
-                            <span className="text-sm">Categoria:</span>
+                    <Card className="max-w-72">
+                        <CardHeader>
+                            <CardTitle className="text-xl font-normal">
+                                Estado
+                            </CardTitle>
+                        </CardHeader>
+                        <CardContent>
                             <Select >
-                                <SelectTrigger className=" w-full rounded text-sm">
-                                    <SelectValue placeholder={"Seleccionar"}/>
+                                <SelectTrigger className="hover:bg-secondary">
+                                    <SelectValue placeholder="Seleccionar" />
                                 </SelectTrigger>
                                 <SelectContent position="popper" sideOffset={5} hideWhenDetached>
-                                    <SelectItem value="en">Activo</SelectItem>
-                                    <SelectItem value="dis">Inactivo</SelectItem>
+                                    <SelectItem value="1">Activo</SelectItem>
+                                    <SelectItem value="0">Inactivo</SelectItem>
                                 </SelectContent>
                             </Select>
-                        </div>
+                        </CardContent>
+                    </Card>
+
+                    <Card className="max-w-screen-md">
+                        <CardHeader>
+                            <CardTitle className="text-xl font-normal">Detalles</CardTitle>
+                        </CardHeader>
+                        <CardContent className="space-y-3">
+                            <label className="flex flex-col gap-2">
+                                <span>Nombre</span>
+                                <Input id="name" />
+                            </label>
+
+                            <label className="flex flex-col gap-2">
+                                <span>Descripción</span>
+                                <Textarea id="description" />
+
+                            </label>
+                        </CardContent>
+                    </Card>
+
+                    <div className="flex max-md:flex-col w-full gap-5">
+                        <Card className="w-full">
+                            <CardHeader>
+                                <CardTitle className="text-xl font-normal">Marca</CardTitle>
+                            </CardHeader>
+                            <CardContent>
+
+                                <Select >
+                                    <SelectTrigger className="hover:bg-secondary">
+                                        <SelectValue placeholder="Seleccionar" />
+                                    </SelectTrigger>
+                                    <SelectContent position="popper" sideOffset={5} hideWhenDetached>
+                                        <SelectItem value="0">Proveedor 1</SelectItem>
+                                        <SelectItem value="1">Proveedor 2</SelectItem>
+                                        <SelectItem value="2">Proveedor 3</SelectItem>
+                                        <SelectItem value="3">Proveedor 4</SelectItem>
+                                    </SelectContent>
+                                </Select>
+
+                            </CardContent>
+                        </Card>
+                        <Card className="w-full">
+                            <CardHeader>
+                                <CardTitle className="text-xl font-normal">Categoria</CardTitle>
+                            </CardHeader>
+                            <CardContent>
+                                <Select>
+                                    <SelectTrigger className="hover:bg-secondary">
+                                        <SelectValue placeholder="Seleccionar" />
+                                    </SelectTrigger>
+                                    <SelectContent position="popper" sideOffset={5} hideWhenDetached>
+                                        <SelectItem value="0">Categoria 1</SelectItem>
+                                        <SelectItem value="1">Categoria 2</SelectItem>
+                                        <SelectItem value="2">Categoria 3</SelectItem>
+                                        <SelectItem value="3">Categoria 4</SelectItem>
+                                    </SelectContent>
+                                </Select>
+                            </CardContent>
+                        </Card>
                     </div>
+
+                    <div className="flex max-md:flex-col w-full gap-5">
+                        <Card className="w-full">
+                            <CardHeader>
+                                <CardTitle className="text-xl font-normal">Precio de Compra</CardTitle>
+                            </CardHeader>
+                            <CardContent>
+                                <Input id="name" type="number" />
+                            </CardContent>
+                        </Card>
+                        <Card className="w-full">
+                            <CardHeader>
+                                <CardTitle className="text-xl font-normal">Precio de Venta</CardTitle>
+                            </CardHeader>
+                            <CardContent>
+                                <Input id="name" type="number" />
+                            </CardContent>
+                        </Card>
+                    </div>
+
+
+
                 </div>
 
+                <div className="w-full flex flex-col gap-5">
 
-                <div className="bg-black p-5 rounded border-neutral-800 border flex flex-col gap-4 w-full">
-                    <h3 className="text-lg tracking-tight leading-none">Configuracion de Precios</h3>
-                    <div className="w-full flex gap-4">
-                        <label htmlFor="" className="space-y-2 text-sm w-full">
-                            <span className=" peer-focus:text-white duration-200">Precio de Compra:</span>
-                            <input 
-                            type="number" 
-                            name="" 
-                            id=""
-                            className="peer border w-full outline-none focus:border-aorus p-2 bg-transparent duration-200 rounded" />
-                        </label>
+                    <Card>
+                        <CardHeader>
+                            <CardTitle className="text-xl font-normal">
+                                Especificaciones del producto
+                            </CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                            <ProductSpecificationsInput />
+                        </CardContent>
+                    </Card>
 
-                        <label htmlFor="" className="space-y-2 text-sm w-full">
-                            <span className=" peer-focus:text-white duration-200">Precio de Venta:</span>
-                            <input 
-                            type="number" 
-                            name="" 
-                            id=""
-                            className="peer border w-full outline-none focus:border-aorus p-2 bg-transparent duration-200 rounded" />
-                        </label>
-                    </div>
+                    <Card>
+                        <CardHeader>
+                            <CardTitle className="text-xl font-normal">
+                                Imagenes
+                            </CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                            <ImageUploader />
+                        </CardContent>
+                    </Card>
+
                 </div>
 
-            </div>
+            </form>
 
-            <div className="w-full flex flex-col gap-7">
 
-                <div className="bg-black border border-neutral-800 w-full p-5 flex flex-col gap-4 rounded">
-                    <h3 className="text-lg tracking-tight leading-none">Especificaciones del producto</h3>
-                    <ProductSpecificationsInput/>
-                </div>  
-                <div className="bg-black border border-neutral-800 w-full p-5 flex flex-col gap-4 rounded">
-                    <ImageUploader/>
-                </div>  
-
-            </div>
-
-        </form>
-    
-    
-    </>
+        </>
     );
 }
