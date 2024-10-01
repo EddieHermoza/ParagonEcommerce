@@ -1,48 +1,46 @@
 "use client";
 
 import * as React from "react";
-import { useRouter, useSearchParams,usePathname } from "next/navigation";
+import { useRouter, useSearchParams, usePathname } from "next/navigation";
 
 import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
+	Select,
+	SelectContent,
+	SelectGroup,
+	SelectItem,
+	SelectTrigger,
+	SelectValue,
 } from "@/components/ui/select";
 import { companies } from "@/lib/stock-data";
 
 export function StockSelector() {
-  const searchParams = useSearchParams();
-  const pathname = usePathname();
-  const { replace } = useRouter();
+	const searchParams = useSearchParams();
+	const pathname = usePathname();
+	const { replace } = useRouter();
 
 
-  const currentTicker = searchParams.get("ticker") || "NVDA";
+	const currentTicker = searchParams.get("ticker") || "NVDA";
 
-  const handleStockChange = (value: string) => {
-    const params = new URLSearchParams(searchParams);
-    params.set("ticker", value);
-    replace(`${pathname}?${params.toString()}`,{ scroll: false });
-  };
-//sa
-  return (
-    <div className='w-full flex justify-end'>
-      <Select value={currentTicker} onValueChange={handleStockChange}>
-        <SelectTrigger className='w-[300px]'>
-          <SelectValue placeholder='Select a stock' />
-        </SelectTrigger>
-        <SelectContent>
+	const handleStockChange = (value: string) => {
+		const params = new URLSearchParams(searchParams);
+		params.set("ticker", value);
+		replace(`${pathname}?${params.toString()}`, { scroll: false });
+	};
 
-            {companies.map((company) => (
-              <SelectItem key={company.ticker} value={company.ticker}>
-                {company.name}
-              </SelectItem>
-            ))}
+	return (
+		<Select value={currentTicker} onValueChange={handleStockChange}>
+			<SelectTrigger className=' max-w-64 w-full h-12 hover:bg-muted/50'>
+				<SelectValue placeholder='Select a stock' />
+			</SelectTrigger>
+			<SelectContent  position="popper" sideOffset={10} hideWhenDetached>
 
-        </SelectContent>
-      </Select>
-    </div>
-  );
+				{companies.map((company) => (
+					<SelectItem key={company.ticker} value={company.ticker}>
+						{company.name}
+					</SelectItem>
+				))}
+			</SelectContent>
+		</Select>
+
+	);
 }

@@ -1,86 +1,86 @@
 import Link from "next/link";
 
-import { AiOutlineLeft } from "react-icons/ai";
-
-import ImageCategoryUploader from "@/components/admin/inputs/imageCategoryUploader";
-
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
+	Select,
+	SelectContent,
+	SelectItem,
+	SelectTrigger,
+	SelectValue,
 } from "@/components/ui/select";
+import { MdOutlineChevronLeft } from "react-icons/md";
+import { Button } from "@/components/ui";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import ImageUploader from "@/components/admin/inputs/image-uploader";
 
 export default function CreateCategoryPage() {
-  return (
-    <>
-      <h1 className="text-5xl">Nueva Categoria</h1>
+	return (
+		<>
+			<section className="max-w-screen-2xl w-full mx-auto flex items-center justify-start gap-5">
 
-      <form action="" className="w-full flex flex-col lg:flex-row gap-10">
-        <div className="space-y-10 w-full max-w-[560px]">
-          <div className="flex w-full gap-5">
-            <Link
-              href={"/admin/categories"}
-              className="btn-secondary p-2 rounded flex-center"
-            >
-              <AiOutlineLeft />
-            </Link>
-            <button className="btn-primary px-5 py-2 rounded">
-              Guardar Categoria
-            </button>
-          </div>
+				<Button asChild variant={"outline"} size={"icon"} className="rounded-full">
+					<Link href={"/admin/brands"}><MdOutlineChevronLeft size={25} /></Link>
+				</Button>
 
-          <div className="bg-black p-5 rounded border-neutral-800 border flex flex-col gap-5 max-w-[300px]">
-            <h3 className="text-xl tracking-tight leading-none">
-              Estado de la Categoria
-            </h3>
-            <Select defaultValue="en">
-              <SelectTrigger className="w-full text-sm rounded">
-                <SelectValue />
-              </SelectTrigger>
-              <SelectContent position="popper" sideOffset={5} hideWhenDetached>
-                <SelectItem value="en">Activo</SelectItem>
-                <SelectItem value="dis">Inactivo</SelectItem>
-              </SelectContent>
-            </Select>
-          </div>
+				<h1 className="text-3xl">Nueva Categoria</h1>
+			</section>
 
-          <div className="bg-black p-5 rounded border-neutral-800 border flex flex-col gap-5">
-            <h3 className="text-xl tracking-tight leading-none">
-              Detalles de la Categoria
-            </h3>
-            <label htmlFor="" className="space-y-2 text-sm">
-              <span className="peer-focus:text-white duration-200">
-                Nombre:
-              </span>
-              <input
-                type="text"
-                name=""
-                id=""
-                className="peer border w-full outline-none focus:border-aorus p-2 bg-transparent duration-200 rounded"
-              />
-            </label>
+			<form action="" className="w-full flex flex-col lg:flex-row gap-10 max-w-screen-2xl mx-auto">
 
-            <label htmlFor="" className="space-y-2 text-sm">
-              <span>Descripcion: </span>
-              <textarea
-                name=""
-                id=""
-                cols={30}
-                rows={10}
-                className="peer border w-full outline-none focus:border-aorus p-2 bg-transparent rounded"
-              />
-            </label>
-          </div>
-        </div>
+				<div className="space-y-10 w-full max-w-lg">
+					<Card className="max-w-72">
+						<CardHeader>
+							<CardTitle>
+								Estado
+							</CardTitle>
+						</CardHeader>
+						<CardContent>
+							<Select defaultValue="en">
+								<SelectTrigger className="w-full text-sm rounded">
+									<SelectValue />
+								</SelectTrigger>
+								<SelectContent position="popper" sideOffset={5} hideWhenDetached>
+									<SelectItem value="en">Activo</SelectItem>
+									<SelectItem value="dis">Inactivo</SelectItem>
+								</SelectContent>
+							</Select>
+						</CardContent>
+					</Card>
 
-        <ImageCategoryUploader
-          title="Imagen referencial de la categoria"
-          description="Arrastra la imagen aquí o haz click para seleccionar"
-          recomendation="Se recomienda una resolucion 400 x 400"
-        />
-      </form>
-    </>
-  );
+					<Card className="max-w-lg">
+						<CardHeader>
+							<CardTitle className="text-xl font-normal">Detalles</CardTitle>
+						</CardHeader>
+						<CardContent className="space-y-3">
+							<label className="flex flex-col gap-2">
+								<span>Nombre</span>
+								<Input id="name" />
+							</label>
+
+							<label className="flex flex-col gap-2">
+								<span>Descripción</span>
+								<Textarea id="description" />
+							</label>
+						</CardContent>
+					</Card>
+				</div>
+
+				<Card className="w-full">
+					<CardHeader>
+						<CardTitle className="text-xl font-normal">Imagen</CardTitle>
+						<CardDescription>Se mostrará como referencia a la categoria</CardDescription>
+					</CardHeader>
+					<CardContent>
+						<ImageUploader
+							type="Imagen"
+							recomendation="Recomendable con una resolucion de 400 x 400"
+							aspect="1/1"
+							size={400}
+						/>
+					</CardContent>
+				</Card>
+			</form>
+		</>
+	);
 }

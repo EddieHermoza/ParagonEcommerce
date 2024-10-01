@@ -41,7 +41,7 @@ export default function HalfYearSalesChart() {
               left: -20,
             }}
           >
-            <CartesianGrid horizontal={false} stroke="rgb(60,60,60)" />
+            <CartesianGrid horizontal={false} />
             <XAxis type="number" dataKey="ventas" hide />
             <YAxis
               dataKey="mes"
@@ -52,22 +52,22 @@ export default function HalfYearSalesChart() {
               tickFormatter={(value) => value.slice(0, 3)}
             />
             <ChartTooltip
-              cursor={{fill:"rgb(23,23,23)"}}
+              cursor={{fill:"hsl(var(--chart-2))"}}
               content={<ChartTooltipContent indicator="dot"/>}
             />
             <Bar 
               dataKey="ventas" 
-              stroke="rgb(255,255,255)" 
-              fill="rgb(255,255,255)" 
-              fillOpacity={0.8}
+              stroke="hsl(var(--chart-2))" 
+              fill="hsl(var(--chart-2))" 
+              fillOpacity={0.9}
               radius={4} >
               
               <LabelList
                 dataKey="ventas"
                 position="right"
                 offset={8}
-                className="fill-white"
                 fontSize={12}
+                className=" fill-foreground"
               />
 
             </Bar>

@@ -83,7 +83,6 @@ export default function Page() {
           </section>
         </TracingBeam>
       </main>
-      <Footer/>
     </>
 
   );

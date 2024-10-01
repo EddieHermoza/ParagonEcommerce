@@ -133,6 +133,14 @@ export const categories = [
     description: "Sumérgete en tu música favorita con nuestros audífonos de alta calidad. Encuentra auriculares inalámbricos, con cancelación de ruido, deportivos y más, diseñados para ofrecer comodidad y rendimiento donde quiera que vayas.",
     status: 1, 
   },
+  { 
+    id: 71,
+    name: "Cases",
+    img: "url",
+    slug: "cases",
+    description: "Sumérgete en tu música favorita con nuestros audífonos de alta calidad. Encuentra auriculares inalámbricos, con cancelación de ruido, deportivos y más, diseñados para ofrecer comodidad y rendimiento donde quiera que vayas.",
+    status: 1, 
+  },
 ];
 
   export const products = [

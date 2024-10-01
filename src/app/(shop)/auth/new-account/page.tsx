@@ -1,36 +1,64 @@
 import Link from "next/link";
-import LinkTransition from "@/components/ui/LinkTransition";
+import { Input } from "@/components/ui/input";
+import { Button, LinkTransition } from "@/components/ui";
+import {
+    Card,
+    CardContent,
+    CardDescription,
+    CardFooter,
+    CardHeader,
+    CardTitle,
+} from "@/components/ui/card"
 
 export default function Page() {
-  return (
-    <section className="max-w-[425px] w-full h-auto bg-black/90 m-auto space-y-3 relative py-4">
-      <h2 className="max-sm:text-3xl text-4xl m-auto p-3 w-full text-center">Registrate</h2>
-      <form action="" method="post" className="flex flex-col gap-7 relative px-5 max-sm:text-sm">
-        <div className="flex w-full gap-5 flex-col">
-          <label htmlFor="flex flex-col gap-2">
-            <span className=""> Nombres: </span>
-            <input type="text" name="" id="" className="outline-none h-[40px] bg-black border focus:border-aorus duration-300 p-2 w-full" />
-          </label>
-          <label htmlFor="flex flex-col gap-2">
-            <span className=""> Apellidos: </span>
-            <input type="text" name="" id="" className="outline-none h-[40px] bg-black border focus:border-aorus duration-300 p-2 w-full" />
-          </label>
-        </div>
+    return (
+        <section className="max-w-screen-sm w-full h-auto m-auto relative">
+            <Card className="bg-background/90 rounded-none border-none">
+                <CardHeader>
+                    <CardTitle className="text-3xl m-auto">
+                        Inicia Sesión
+                    </CardTitle>
+                </CardHeader>
+                <CardContent>
+                    <form>
+                        <div className="grid w-full items-center max-sm:gap-5 gap-10">
+							<div className=" w-full flex justify-between max-sm:flex-col max-sm:gap-5 gap-3">
 
-        <label htmlFor="flex flex-col gap-2">
-          <span className=""> Correo Electrónico </span>
-          <input type="email" name="" id="" className="outline-none h-[40px] bg-black border focus:border-aorus  duration-300 p-2 w-full" />
-        </label>
-        <label htmlFor="" className="flex flex-col gap-2">
-          <span className=""> Contraseña </span>
-          <input type="password" name="" id="" className="outline-none h-[40px] bg-black border focus:border-aorus transform duration-300 p-2 w-full"/>
-        </label>
-        <button className=" w-full btn-primary text-lg sm:text-2xl py-2">Registrarse</button>
-      </form>
-      <div className="flex flex-col gap-3 relative px-5">
-        <span className="text-lg mx-auto">o</span>
-        <LinkTransition href={"/auth/login"} className="flex-center w-full btn-secondary text-lg sm:text-2xl py-2">Iniciar Sesión</LinkTransition>
-      </div>
-    </section>
-  );
+								<label htmlFor="name" className="flex flex-col gap-2 w-full">
+									<span>Nombres:</span>
+									<Input id="name" />
+								</label>
+
+								<label htmlFor="lastName" className="flex flex-col gap-2 w-full">
+									<span>Apellidos:</span>
+									<Input id="lastName" />
+								</label>
+
+							</div>
+
+                            <label htmlFor="name" className="flex flex-col gap-2">
+                                <span>Correo Electrónico</span>
+                                <Input id="name" />
+                            </label>
+
+                            <label htmlFor="password" className="flex flex-col gap-2">
+                                <span>Contraseña</span>
+                                <Input id="password" type="password" />
+                            </label>
+                            
+                            <div className="w-full flex-center flex-col gap-2 relative">
+                                <Button asChild className="text-xl w-full">
+                                    <Link href={"/admin/dashboard"}>Registrarse</Link>
+                                </Button>
+                                o
+                                <Button asChild variant={"secondary"} className="text-xl w-full">
+                                    <Link href={"/auth/new-account"}>Iniciar Sesión</Link>
+                                </Button>
+                            </div>
+                        </div>
+                    </form>
+                </CardContent>
+            </Card>
+        </section>
+    );
 }

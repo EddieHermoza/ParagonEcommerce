@@ -16,7 +16,7 @@ import {
 } from "@/components/ui/card"
 
 import ProductSpecificationsInput from "@/components/admin/inputs/ProductSpecificationsInput";
-import ImageUploader from "@/components/admin/inputs/ImageUploader";
+import ImagesUploader from "@/components/admin/inputs/images-uploader";
 import { Button } from "@/components/ui";
 import { MdOutlineChevronLeft } from "react-icons/md";
 import { Textarea } from "@/components/ui/textarea";
@@ -27,7 +27,7 @@ export default function CreateProductPage() {
     return (
         <>
             <section className="max-w-screen-2xl w-full mx-auto flex items-center justify-start gap-5">
-                <Button asChild variant={"outline"} size={"icon"} className="rounded-full hover:text-primary">
+                <Button asChild variant={"outline"} size={"icon"} className="rounded-full">
                     <Link href={"/admin/products"} ><MdOutlineChevronLeft size={25} /></Link>
                 </Button>
 
@@ -160,7 +160,7 @@ export default function CreateProductPage() {
                             </CardTitle>
                         </CardHeader>
                         <CardContent>
-                            <ImageUploader />
+                            <ImagesUploader />
                         </CardContent>
                     </Card>
 

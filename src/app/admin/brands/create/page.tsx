@@ -2,126 +2,120 @@ import Link from "next/link";
 
 import { AiOutlineLeft } from "react-icons/ai";
 
-import BannerUploader from "@/components/admin/inputs/bannerUploader";
+import ImageUploader from "@/components/admin/inputs/image-uploader";
+
+import { Card, CardHeader, CardTitle, CardContent, CardDescription } from "@/components/ui/card";
 
 import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
+	Button,
+	Carousel,
+	CarouselContent,
+	CarouselItem,
+	CarouselNext,
+	CarouselPrevious,
 } from "@/components/ui";
 
 import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
+	Select,
+	SelectContent,
+	SelectItem,
+	SelectTrigger,
+	SelectValue,
 } from "@/components/ui/select";
+import { MdOutlineChevronLeft } from "react-icons/md";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 
 export default function CreateBrandPage() {
-  console.log("pruebacommit");
-  return (
-    <>
-      <h1 className="text-5xl">Nueva marca</h1>
+	return (
+		<>
+			<section className="max-w-screen-2xl w-full mx-auto flex items-center justify-start gap-5">
 
-      <form action="" className="w-full flex flex-col lg:flex-row gap-10 ">
-        <div className="space-y-10 w-full max-w-[560px]">
-          <div className="flex w-full gap-5">
-            <Link
-              href={"/admin/brands"}
-              className="btn-secondary p-2 rounded flex-center"
-            >
-              <AiOutlineLeft />
-            </Link>
+				<Button asChild variant={"outline"} size={"icon"} className="rounded-full">
+					<Link href={"/admin/brands"}><MdOutlineChevronLeft size={25} /></Link>
+				</Button>
 
-            <button className="btn-primary px-5 py-2 rounded">
-              Guardar Marca
-            </button>
-          </div>
+				<h1 className="text-3xl">Nuevo Marca</h1>
+			</section>
 
-          <div className="bg-black p-5 rounded border-neutral-800 border flex flex-col gap-5 max-w-[300px]">
-            <h3 className="text-xl tracking-tight leading-none">
-              Estado de la Marca
-            </h3>
-            <Select defaultValue="en">
-              <SelectTrigger className=" w-full text-sm rounded">
-                <SelectValue />
-              </SelectTrigger>
-              <SelectContent position="popper" sideOffset={5} hideWhenDetached>
-                <SelectItem value="en">Activo</SelectItem>
-                <SelectItem value="dis">Inactivo</SelectItem>
-              </SelectContent>
-            </Select>
-          </div>
+			<form className="w-full flex flex-col xl:flex-row gap-5 max-w-screen-2xl mx-auto">
+				<div className="flex flex-col gap-5 max-w-md w-full">
+					<Card className="max-w-72">
+						<CardHeader>
+							<CardTitle className="text-xl font-normal">
+								Estado
+							</CardTitle>
+						</CardHeader>
+						<CardContent>
+							<Select defaultValue="en">
+								<SelectTrigger className=" w-full text-sm rounded">
+									<SelectValue />
+								</SelectTrigger>
+								<SelectContent position="popper" sideOffset={5} hideWhenDetached>
+									<SelectItem value="en">Activo</SelectItem>
+									<SelectItem value="dis">Inactivo</SelectItem>
+								</SelectContent>
+							</Select>
+						</CardContent>
+					</Card>
 
-          <div className="bg-black p-5 rounded border-neutral-800 border flex flex-col gap-5">
-            <h3 className="text-xl tracking-tight leading-none">
-              Detalles de la Marca
-            </h3>
-            <label htmlFor="" className="space-y-2 text-sm">
-              <span className=" peer-focus:text-white duration-200">
-                Nombre:
-              </span>
-              <input
-                type="text"
-                name=""
-                id=""
-                className="peer border w-full outline-none focus:border-aorus p-2 bg-transparent duration-200 rounded"
-              />
-            </label>
+                    <Card className="max-w-md">
+                        <CardHeader>
+                            <CardTitle className="text-xl font-normal">Detalles</CardTitle>
+                        </CardHeader>
+                        <CardContent className="space-y-3">
+                            <label className="flex flex-col gap-2">
+                                <span>Nombre</span>
+                                <Input id="name" />
+                            </label>
 
-            <label htmlFor="" className="space-y-2 text-sm">
-              <span>Descripcion: </span>
-              <textarea
-                name=""
-                id=""
-                cols={30}
-                rows={10}
-                className="peer border w-full outline-none focus:border-aorus p-2 bg-transparent rounded"
-              ></textarea>
-            </label>
-          </div>
-        </div>
-        
+                            <label className="flex flex-col gap-2">
+                                <span>Descripción</span>
+                                <Textarea id="description" />
 
-        <div className="bg-black p-5 rounded border-neutral-800 border flex flex-col gap-5 w-full relative">
-          <h3 className="text-xl tracking-tight leading-none">
-            Imagenes de la Marca
-          </h3>
-          <span>Se mostraran como banner de la pagina</span>
-          <Carousel className="w-full h-full">
-            <CarouselContent className="w-full  relative ml-0 pl-0 h-[500px]">
-              <CarouselItem className="pl-0 ">
-                <BannerUploader
-                  type="Banner para PC"
-                  recomendation="Recomendable con una resolucion de 2000 x 714"
-                  aspect="28/10"
-                  size={700}
-                />
-              </CarouselItem>
-              <CarouselItem className="pl-0">
-                <BannerUploader
-                  type="Banner para Movil"
-                  recomendation="Recomendable con una resolucion de 375 x 200"
-                  aspect="3/4"
-                  size={240}
-                />
-              </CarouselItem>
-            </CarouselContent>
+                            </label>
+                        </CardContent>
+                    </Card>
+				</div>
 
-            <CarouselPrevious
-              className="absolute left-0 h-full hover:text-aorus rounded-none max-sm:w-[20%] sm:w-[12%] border-none "
-              iconClassName="h-16 w-16 duration-300 p-2 hover:scale-110"
-            />
-            <CarouselNext
-              className="absolute right-0 hover:text-aorus h-full rounded-none max-sm:w-[20%] sm:w-[12%] border-none "
-              iconClassName="h-16 w-16 duration-300 p-2 hover:scale-110"
-            />
-          </Carousel>
-        </div>
-      </form>
-    </>
-  );
+				<Card>
+					<CardHeader>
+						<CardTitle className="text-xl font-normal">Imágenes de la Marca</CardTitle>
+						<CardDescription>Se mostraran como banner de la pagina</CardDescription>
+					</CardHeader>
+					<CardContent>
+						<Carousel className="w-full h-full">
+							<CarouselContent className="w-full  relative ml-0 pl-0 h-[500px]">
+								<CarouselItem className="pl-0 ">
+									<ImageUploader
+										type="Banner para PC"
+										recomendation="Recomendable con una resolucion de 2000 x 714"
+										aspect="28/10"
+										size={700}
+									/>
+								</CarouselItem>
+								<CarouselItem className="pl-0">
+									<ImageUploader
+										type="Banner para Movil"
+										recomendation="Recomendable con una resolucion de 375 x 200"
+										aspect="3/4"
+										size={240}
+									/>
+								</CarouselItem>
+							</CarouselContent>
+
+							<CarouselPrevious
+								className="absolute left-0 h-full hover:text-primary rounded-none max-sm:w-[20%] sm:w-[12%] border-none bg-transparent hover:bg-muted/40"
+								iconClassName="h-12 w-12 duration-200 p-2 hover:scale-110"
+							/>
+							<CarouselNext
+								className="absolute right-0 hover:text-primary h-full rounded-none max-sm:w-[20%] sm:w-[12%] border-none bg-transparent hover:bg-muted/40"
+								iconClassName="h-12 w-12 duration-200 p-2 hover:scale-110"
+							/>
+						</Carousel>
+					</CardContent>
+				</Card>
+			</form>
+		</>
+	);
 }

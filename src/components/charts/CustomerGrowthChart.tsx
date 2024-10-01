@@ -38,7 +38,7 @@ export default function CustomerGrowthChart() {
               right: 12,
             }}
           >
-            <CartesianGrid vertical={false} stroke="rgb(60,60,60)" />
+            <CartesianGrid vertical={false}  />
             <XAxis
               dataKey="mes"
               tickLine={false}
@@ -53,9 +53,9 @@ export default function CustomerGrowthChart() {
             <Area
               dataKey="registrados"
               type="linear"
-              fill="rgb(255,100,0)"
+              fill="hsl(var(--chart-5))"
               fillOpacity={0.6}
-              stroke="rgb(255,100,0)"
+              stroke="hsl(var(--chart-5))"
             />
           </AreaChart>
         </ChartContainer>

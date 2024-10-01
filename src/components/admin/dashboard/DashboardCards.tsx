@@ -1,60 +1,85 @@
-import { FiUsers } from "react-icons/fi";
+import { FiDollarSign, FiUsers } from "react-icons/fi";
 import { MdOutlinePayment } from "react-icons/md";
 import { FaComputer } from "react-icons/fa6";
 import { LiaHandHoldingUsdSolid } from "react-icons/lia";
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import { PiChartLineUpLight, PiUsersThreeFill } from "react-icons/pi";
 
 
-export  function YearSalesCard() {
-  return (
+export function YearSalesCard() {
+    return (
 
-    <div className="w-full h-32 gap-5 px-3 border divide-x-2 rounded flex-center">
-        <MdOutlinePayment size={40}  />
-        <div className="flex flex-col gap-1 pl-3">
-            <span className="text-3xl tracking-widest shadow-white/50 text-shadow-lg">$10000</span> 
-            <span className="text-gray-300">Ventas totales del año</span>
-        </div>
-    </div>
-  );
+        <Card x-chunk="dashboard-01-chunk-2">
+            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+                <CardTitle className="text-sm font-medium">Ventas</CardTitle>
+                <PiChartLineUpLight size={22} className="text-muted-foreground" />
+            </CardHeader>
+            <CardContent>
+                <div className="text-2xl font-bold">$12,000</div>
+                <p className="text-xs text-muted-foreground">
+                    +19% respecto al mes pasado
+                </p>
+            </CardContent>
+        </Card>
+    );
 }
 
-export  function YearRevenueCard() {
+export function YearRevenueCard() {
     return (
-    <div className="w-full h-32 gap-5 px-3 border divide-x-2 rounded flex-center">
-        <LiaHandHoldingUsdSolid size={60} className=""  />
-        <div className="flex flex-col gap-1 pl-3">
-            <span className="text-3xl tracking-widest shadow-white/50 text-shadow-lg">$10000</span> 
-            <span className="text-gray-300">Ganancia total del año</span>
-        </div>
-    </div>
+        <Card x-chunk="dashboard-01-chunk-0">
+            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+                <CardTitle className="text-sm font-medium">
+                    Ganancia Total
+                </CardTitle>
+                <FiDollarSign size={22} className="text-muted-foreground" />
+            </CardHeader>
+            <CardContent>
+                <div className="text-2xl font-bold">$4,000</div>
+                <p className="text-xs text-muted-foreground">
+                    +20.1% respecto al mes pasado
+                </p>
+            </CardContent>
+        </Card>
     );
-  }
-  export  function CustomerCountCard() {
+}
+export function CustomerCountCard() {
     return (
-    <div className="w-full h-32 gap-5 px-3 border divide-x-2 rounded flex-center">
-        <FiUsers size={40}  />
-        <div className="flex flex-col gap-1 pl-3">
-            <span className="text-3xl tracking-widest shadow-white/50 text-shadow-lg">24</span> 
-            <span className="text-gray-300">Clientes registrados del mes</span>
-        </div>
-    </div>
+        <Card x-chunk="dashboard-01-chunk-1">
+            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+                <CardTitle className="text-sm font-medium">
+                    Clientes Registrados
+                </CardTitle>
+                <PiUsersThreeFill size={22} className="text-muted-foreground" />
+            </CardHeader>
+            <CardContent>
+                <div className="text-2xl font-bold">+235</div>
+                <p className="text-xs text-muted-foreground">
+                    +180.1% respecto al mes pasado
+                </p>
+            </CardContent>
+        </Card>
     );
-  }
-  export function StockProductsCard() {
+}
+export function StockProductsCard() {
     return (
-    <div className="w-full h-32 gap-5 px-3 border divide-x-2 rounded flex-center">
-        <FaComputer size={40} />
-            <div className="flex flex-col gap-1 pl-3">
-            <div className="flex items-center justify-between w-full">
-                <span className="text-3xl tracking-widest shadow-white/50 text-shadow-lg">78</span> 
-                <div className="flex gap-3">
-                    <span className="text-green-500 text-shadow-lg shadow-green-500/50">50</span>
-                    <span>/</span>
-                    <span className="text-red-500 text-shadow-lg shadow-red-500/50">28</span>
+        <Card>
+            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+                <CardTitle className="text-sm font-medium">
+                    Productos Registrados
+                </CardTitle>
+                <FaComputer size={22} className="text-muted-foreground" />
+            </CardHeader>
+            <CardContent>
+                <div className="flex items-center justify-between w-full">
+                    <div className="text-3xl font-bold">78</div>
+                    <div className="flex gap-3">
+                        <span className="text-green-500 text-shadow-lg shadow-green-500/50">50</span>
+                        <span>/</span>
+                        <span className="text-red-500 text-shadow-lg shadow-red-500/50">28</span>
+                    </div>
                 </div>
-            </div>
-            <span className="text-gray-300">Productos Registrados</span>
-        </div>
-    </div>
+            </CardContent>
+        </Card>
     );
-  }
+}
 

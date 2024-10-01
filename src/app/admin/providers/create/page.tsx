@@ -1,157 +1,178 @@
-
-import Link from 'next/link';
-
-import { AiOutlineLeft } from "react-icons/ai";
+"use client"
+import Link from "next/link";
+import { MdOutlineChevronLeft } from "react-icons/md";
+import { Input } from "@/components/ui/input";
+import { useRouter } from 'next/navigation'
+import { toast } from "sonner"
+import { ProviderSchema } from "@/Schemas";
+import {useForm,Controller,SubmitHandler} from "react-hook-form"
+import {zodResolver} from "@hookform/resolvers/zod"
 
 import {
-    Select,
-    SelectContent,
-    SelectItem,
-    SelectTrigger,
-    SelectValue,
-  } from "@/components/ui/select"
-  
+	Card,
+	CardHeader,
+	CardTitle,
+	CardContent,
+	CardDescription
+} from "@/components/ui/card"
 
-export default function CreateProviderPage() {
+import {
+	Select,
+	SelectContent,
+	SelectItem,
+	SelectTrigger,
+	SelectValue,
+} from "@/components/ui/select"
 
-    return (
-    <>
-        <h1 className="text-5xl">Nuevo Proveedor</h1>
+import { Button } from "@/components/ui/button";
 
-        <form action="" className="w-full flex gap-10 ">
 
-            <div className="space-y-10 w-full">
+type Input={
+	name:string,
+	legal:string,
+	status:string,
+	ruc:string,
+	number:string,
+	email:string,
+	web:string,
+}
 
-                <div className="flex w-full gap-5">
+export default function Page() {
+	const {register,reset, control,watch,handleSubmit, formState:{errors} } = useForm<Input>({
+		resolver:zodResolver(ProviderSchema)
+	})
 
-                    <Link href={"/admin/providers"} className="btn-secondary p-2 rounded flex-center"><AiOutlineLeft/></Link>
-                    
-                    <button className="btn-primary px-5 py-2 rounded">Guardar Proveedor</button>
+	const router = useRouter()
 
-                </div>
+	const onSubmit: SubmitHandler<Input> = (data) => {
+		toast("Proveedor Creado Correctamente", {
+			description: "Sunday, December 03, 2023 at 9:00 AM",
+			duration: 5000,
+			action: {
+				label: "Entendido",
+				onClick: () => console.log("Entendido"),
+			},
+		});
+		router.push('/admin/providers');
+		reset();
+	}
+	return (
+		<>
+			<section className="max-w-screen-xl w-full mx-auto flex items-center justify-start gap-5">
 
-                <div className="bg-black p-5 rounded border-neutral-800 border flex flex-col gap-5 max-w-[300px]">
-                    <h3 className="text-xl tracking-tight leading-none">Estado del Proveedor</h3>
-                    <Select defaultValue="en">
-                        <SelectTrigger className=" w-full text-sm rounded">
-                                <SelectValue/>
-                        </SelectTrigger>
-                        <SelectContent position="popper" sideOffset={5} hideWhenDetached>
-                            <SelectItem value="en">Activo</SelectItem>
-                            <SelectItem value="dis">Inactivo</SelectItem>
-                        </SelectContent>
-                    </Select>
-                </div>
+				<Button asChild variant={"outline"} size={"icon"} className="rounded-full">
+					<Link href={"/admin/providers"}><MdOutlineChevronLeft size={25}/></Link>
+				</Button>
 
-                <div className='w-full flex gap-10'>
+				<h1 className="text-3xl">Nuevo Proveedor</h1>
+			</section>
 
-                    <div className='w-full flex flex-col  gap-5 bg-black border-neutral-800 border p-5'>
-                        <h3 className="text-xl tracking-tight leading-none">Detalles del proveedor</h3>
+			<form onSubmit={handleSubmit(onSubmit)} className="flex max-w-screen-xl w-full max-lg:flex-col mx-auto gap-5">
 
-                        <div className='flex gap-5 w-full'>
+				<div className="flex flex-col gap-5 w-full lg:w-[60%]">
+					<Card className="max-w-72">
+						<CardHeader>
+							<CardTitle className="text-xl font-normal">
+								Estado
+							</CardTitle>
+						</CardHeader>
+						<CardContent>
+							<Controller
+                                name="status"
+                                control={control}
+                                defaultValue="1"
+                                render={({ field }) => (
+                                    <Select onValueChange={field.onChange} value={field.value}>
+                                        <SelectTrigger className="hover:bg-secondary">
+                                            <SelectValue placeholder="Seleccionar" />
+                                        </SelectTrigger>
+                                        <SelectContent position="popper" sideOffset={5} hideWhenDetached>
+                                            <SelectItem value="1">Activo</SelectItem>
+                                            <SelectItem value="0">Inactivo</SelectItem>
+                                        </SelectContent>
+                                    </Select>
+                                )}
+                            />
+							{
+								errors.status && <p className="text-red-600 text-xs">{errors.status.message}</p>
+							}
+						</CardContent>
+					</Card>
 
-                            <div className=" flex flex-col gap-5 w-full">
-                                <label htmlFor="" className="space-y-2 text-sm">
-                                    <span className=" peer-focus:text-white duration-200">Ruc:</span>
-                                    <input 
-                                    type="text" 
-                                    name="" 
-                                    id=""
-                                    className="peer border w-full outline-none focus:border-aorus p-2 bg-transparent duration-200 rounded" />
-                                </label>
+					<Card className="max-w-screen-md">
+						<CardHeader>
+							<CardTitle className="text-xl font-normal">Detalles</CardTitle>
+						</CardHeader>
+						<CardContent className="space-y-3">
+                            <label className="flex flex-col gap-2">
+								<span className="text-sm">RUC</span>
+								<Input id="ruc" {...register("ruc")}/>
+								{
+									errors.ruc && <p className="text-red-600 text-xs">{errors.ruc.message}</p>
+								}
+							</label>
+							<label className="flex flex-col gap-2">
+								<span className="text-sm">Nombre</span>
+								<Input id="name" {...register("name")}/>
+								{
+									errors.name && <p className="text-red-600 text-xs">{errors.name.message}</p>
+								}
+							</label>
 
-                                <label htmlFor="" className="space-y-2 text-sm">
-                                    <span className=" peer-focus:text-white duration-200">Nombre:</span>
-                                    <input 
-                                    type="text" 
-                                    name="" 
-                                    id=""
-                                    className="peer border w-full outline-none focus:border-aorus p-2 bg-transparent duration-200 rounded" />
-                                </label>
+							<label  className="flex flex-col gap-2">
+								<span className="text-sm">Razón Social</span>
+								<Input id="legal" {...register("legal")}/>
+								{
+									errors.legal && <p className="text-red-600 text-xs">{errors.legal.message}</p>
+								}
+							</label>
+						</CardContent>
+					</Card>
 
-                                <label htmlFor="" className="space-y-2 text-sm">
-                                    <span className=" peer-focus:text-white duration-200">Razón Social:</span>
-                                    <input 
-                                    type="text" 
-                                    name="" 
-                                    id=""
-                                    className="peer border w-full outline-none focus:border-aorus p-2 bg-transparent duration-200 rounded" />
-                                </label>
-                            </div>
+					<Card className="max-w-screen-md">
+						<CardHeader>
+							<CardTitle className="text-xl font-normal">Contacto</CardTitle>
+						</CardHeader>
+						<CardContent className="flex gap-5 max-md:flex-col">
+							<label className="flex flex-col gap-2 w-full">
+								<span className="text-sm">Correo Electrónico</span>
+								<Input id="email" {...register("email")}/>
+								{
+									errors.email && <p className="text-red-600 text-xs">{errors.email.message}</p>
+								}
+							</label>
 
-                            <div className=" flex flex-col gap-5 w-full">
-                                <label htmlFor="" className="space-y-2 text-sm">
-                                    <span className=" peer-focus:text-white duration-200">Web:</span>
-                                    <input 
-                                    type="text" 
-                                    name="" 
-                                    id=""
-                                    className="peer border w-full outline-none focus:border-aorus p-2 bg-transparent duration-200 rounded" />
-                                </label>
+							<label className="flex flex-col gap-2 w-full">
+								<span className="text-sm">Número Telefónico</span>
+								<Input id="number" {...register("number")}/>
+								{
+									errors.number && <p className="text-red-600 text-xs">{errors.number.message}</p>
+								}
+							</label>
+						</CardContent>
+					</Card>
 
-                                <label htmlFor="" className="space-y-2 text-sm">
-                                    <span className=" peer-focus:text-white duration-200">Número telefonico:</span>
-                                    <input 
-                                    type="text" 
-                                    name="" 
-                                    id=""
-                                    className="peer border w-full outline-none focus:border-aorus p-2 bg-transparent duration-200 rounded" />
-                                </label>
+				</div>
+				<div className="w-full lg:w-[40%] relative flex flex-col gap-5">
+                    <Card className="w-full">
+						<CardHeader>
+							<CardTitle className="text-xl font-normal">Página web</CardTitle>
+						</CardHeader>
+						<CardContent>
+								<Input id="web" {...register("web")}/>
+								{
+									errors.web && <p className="text-red-600 text-xs">{errors.web.message}</p>
+								}
+						</CardContent>
+					</Card>
+					
+					<Button variant={"secondary"}>
+						Guardar Proveedor
+					</Button>
 
-                                <label htmlFor="" className="space-y-2 text-sm">
-                                    <span className=" peer-focus:text-white duration-200">Correo ELectrónico:</span>
-                                    <input 
-                                    type="text" 
-                                    name="" 
-                                    id=""
-                                    className="peer border w-full outline-none focus:border-aorus p-2 bg-transparent duration-200 rounded" />
-                                </label>
-                            </div>
+				</div>
 
-                        </div>
-
-                    </div>
-
-                    <div className='bg-black border border-neutral-800 p-5 flex flex-col gap-5 max-w-[560px] w-full rounded'>
-                        <div className='flex flex-col gap-2'>
-                            <h3 className='text-xl tracking-tight leading-none'>Contacto Directo</h3>
-                            <span className='text-sm text-gray-400'> Opcional</span> 
-                        </div>
-
-                        <label htmlFor="" className="space-y-2 text-sm">
-                            <span className=" peer-focus:text-white duration-200">Nombre:</span>
-                            <input 
-                            type="text" 
-                            name="" 
-                            id=""
-                            className="peer border w-full outline-none focus:border-aorus p-2 bg-transparent duration-200 rounded" />
-                        </label>
-
-                        <label htmlFor="" className="space-y-2 text-sm">
-                            <span className=" peer-focus:text-white duration-200">Número telefonico:</span>
-                            <input 
-                            type="text" 
-                            name="" 
-                            id=""
-                            className="peer border w-full outline-none focus:border-aorus p-2 bg-transparent duration-200 rounded" />
-                        </label>
-
-                        <label htmlFor="" className="space-y-2 text-sm">
-                            <span className=" peer-focus:text-white duration-200">Correo ELectrónico:</span>
-                            <input 
-                            type="text" 
-                            name="" 
-                            id=""
-                            className="peer border w-full outline-none focus:border-aorus p-2 bg-transparent duration-200 rounded" />
-                        </label>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </form>
-
-    </>
-    );
+			</form>
+		</>
+	);
 }

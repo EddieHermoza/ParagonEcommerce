@@ -30,7 +30,7 @@ export default function TopBrandsChart() {
         <div className="aspect-auto h-[500px] w-full ">
         <ChartContainer config={chartConfig} className='aspect-auto h-[500px] w-full'>
           <BarChart accessibilityLayer data={chartData} >
-            <CartesianGrid vertical={false} stroke="rgb(60,60,60)" />
+            <CartesianGrid vertical={false}/>
             <XAxis
               dataKey="marca"
               tickLine={false}
@@ -38,14 +38,14 @@ export default function TopBrandsChart() {
               axisLine={false}
             />
             <ChartTooltip 
-                cursor={{ fill: 'rgba(23, 23, 23)' }}
+                cursor={{fill:"hsl(var(--chart-3))"}}
                 content={<ChartTooltipContent indicator="dot" />}
             />
             <Bar 
                 dataKey="ventas" 
-                fill="rgba(255, 255, 0)" 
-                fillOpacity={0.6}
-                stroke="rgba(255,255,0)"
+                stroke="hsl(var(--chart-3))" 
+                fill="hsl(var(--chart-3))" 
+                fillOpacity={0.9}
                 radius={4} 
             >
             </Bar>

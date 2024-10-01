@@ -6,6 +6,8 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
+
+
 export const generatePagination =  (currentPage:number, totalPages:number) => {
 
   if (totalPages <= 7) {

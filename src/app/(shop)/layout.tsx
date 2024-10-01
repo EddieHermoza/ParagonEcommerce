@@ -11,7 +11,7 @@ export default function ShopLayout({children}:{
       <>
           {children}
       </>
-
+      <Footer />
     </>
 
   )
