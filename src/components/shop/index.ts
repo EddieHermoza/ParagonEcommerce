@@ -1,6 +1,6 @@
 export {default as HeroCarousel} from "@/components/shop/sections/hero-carousel"
 export {default as CategoriesCarousel} from "@/components/shop/categories-carousel"
-export {default as Footer } from "./footer"
+export {default as Footer } from "./shop-footer"
 export {default as ContactForm }  from "@/components/shop/sections/contact-form"
 export {default as MembresyBanner }  from "@/components/shop/sections/membresy-banner"
 
