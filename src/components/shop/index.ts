@@ -17,5 +17,3 @@ export {default as ReviewCarousel} from "@/components/shop/product/review-carous
 export {default as FilterBrandPage} from "@/components/shop/brands/FilterBrandPage"
 export {default as LastProductAdded} from "@/components/shop/brands/LastProductAdded"
 export {default as UnitsSolds} from "@/components/shop/top-sellers/UnitsSolds"
-
-//TODO
